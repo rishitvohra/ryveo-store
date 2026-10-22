@@ -55,7 +55,22 @@ const products = [
 {name:"Choti Advance",price:609,image:"choti adv.jpeg",description:"For the smokers",colours:["White"],sizes:["S","M","L","XL"]}
 ];
 // Curated categories: bold graphic/masculine edits under OFF-GRID BOYS; expressive and custom styles under IT-GIRL ENERGY.
-const boysNames = new Set(["Indigo baddie Streetwear Lookbook","poisoned and venomous now","Deathbed","Knights and the Warriors","Pantherious","Pantherious — White Panther","Jaat Balwan","Choti Advance"]);
+
+const boysNames = new Set([
+  "diet joke",
+  "vodkas are best",
+  "might be drunk a little",
+  "warned by mom",
+  "poisoned and venomous now",
+  "Deathbed",
+  "Knights and the Warriors",
+  "Pantherious",
+  "Pantherious — White Panther",
+  "absolut diva",
+  "Jaat Balwan",
+  "Choti Advance",
+  "custom print baby"
+]);
 products.forEach(p => p.category = boysNames.has(p.name) ? "boys" : "girls");
 const container=document.getElementById("products");
 products.forEach((p,i)=>{
