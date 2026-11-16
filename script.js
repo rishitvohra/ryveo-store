@@ -1,19 +1,7 @@
-
 "use strict";
 
-/* =====================================
-   RYVEO WEBSITE CONFIGURATION
-===================================== */
-
-// WhatsApp number with India country code
+// WhatsApp number: country code + 10-digit number.
 const WHATSAPP_NUMBER = "917827271703";
-
-const INSTAGRAM_URL = "https://www.instagram.com/ryveo.in/";
-
-
-/* =====================================
-   PRODUCT DATABASE
-===================================== */
 
 const products = [
   {
@@ -130,11 +118,7 @@ const products = [
   }
 ];
 
-
-/* =====================================
-   PRODUCT CATEGORIES
-===================================== */
-
+// Boys and Girls categories
 const boysNames = new Set([
   "warned by mom",
   "custom print baby",
@@ -153,276 +137,45 @@ products.forEach(product => {
     : "girls";
 });
 
+let activeProduct = null;
 
-/* =====================================
-   HELPER FUNCTIONS
-===================================== */
 
-function createElement(tag, className, text) {
-  const element = document.createElement(tag);
-
-  if (className) {
-    element.className = className;
-  }
-
-  if (text !== undefined) {
-    element.textContent = text;
-  }
-
-  return element;
-}
-
-function createSelect(options, ariaLabel, prefix = "") {
+// Create dropdowns
+function makeSelect(options, ariaLabel, prefix = "") {
   const select = document.createElement("select");
 
   select.setAttribute("aria-label", ariaLabel);
 
-  options.forEach(option => {
-    select.add(
-      new Option(prefix + option, option)
-    );
+  options.forEach(value => {
+    select.add(new Option(prefix + value, value));
   });
 
   return select;
 }
 
-function createQuantitySelect() {
-  const select = document.createElement("select");
 
-  select.setAttribute("aria-label", "Select quantity");
-
-  for (let i = 1; i <= 5; i++) {
-    select.add(
-      new Option("Quantity: " + i, String(i))
-    );
-  }
-
-  return select;
-}
-
-
-/* =====================================
-   PRODUCT CARD
-===================================== */
-
-function createProductCard(product, index) {
-
-  const card = createElement("article", "product");
-
-  // IMAGE
-  const imageWrap = createElement("div", "image-wrap");
-
-  const image = document.createElement("img");
-
-  image.src = product.image;
-  image.alt = product.name;
-  image.loading = index < 4 ? "eager" : "lazy";
-
-  image.onerror = function () {
-    this.style.display = "none";
-
-    const error = createElement(
-      "div",
-      "",
-      "Image missing: " + product.image
-    );
-
-    error.style.cssText =
-      "padding:20px;color:#aaa;text-align:center;font-size:12px";
-
-    imageWrap.append(error);
-  };
-
-  const tag = createElement(
-    "span",
-    "product-tag",
-    product.name === "custom print baby"
-      ? "Make it yours"
-      : index === 0
-        ? "Featured"
-        : "Ryveo original"
-  );
-
-  const hint = createElement(
-    "span",
-    "view-hint",
-    "Tap to view ↗"
-  );
-
-  imageWrap.append(image, tag, hint);
-
-  imageWrap.addEventListener("click", () => {
-    openProduct(product);
-  });
-
-
-  // PRODUCT INFORMATION
-  const info = createElement("div", "product-info");
-
-  const title = createElement(
-    "h3",
-    "",
-    product.name
-  );
-
-  title.addEventListener("click", () => {
-    openProduct(product);
-  });
-
-  const description = createElement(
-    "p",
-    "",
-    product.description
-  );
-
-
-  // PRICE
-  const priceRow = createElement("div", "price-row");
-
-  const price = createElement(
-    "div",
-    "price",
-    "₹" + product.price
-  );
-
-  const priceLabel = createElement(
-    "span",
-    "",
-    "PRODUCT PRICE"
-  );
-
-  priceLabel.style.cssText =
-    "font-size:9px;color:#aaa99d;letter-spacing:1px";
-
-  priceRow.append(price, priceLabel);
-
-
-  // OPTIONS
-  const colour = createSelect(
-    product.colours,
-    "Choose colour for " + product.name
-  );
-
-  const size = createSelect(
-    product.sizes,
-    "Choose size for " + product.name,
-    "Size: "
-  );
-
-  const quantity = createQuantitySelect();
-
-
-  // ORDER BUTTON
-  const button = createElement(
-    "button",
-    "order",
-    "ORDER ON WHATSAPP ↗"
-  );
-
-  button.type = "button";
-
-  button.addEventListener("click", () => {
-    sendOrder(
-      product,
-      colour.value,
-      size.value,
-      Number(quantity.value)
-    );
-  });
-
-
-  // FINAL CARD
-  info.append(
-    title,
-    description,
-    priceRow,
-    colour,
-    size,
-    quantity,
-    button
-  );
-
-  card.append(imageWrap, info);
-
-  return card;
-}
-
-
-/* =====================================
-   RENDER PRODUCTS
-===================================== */
-
-function renderProducts() {
-
-  const allContainer = document.getElementById("products");
-  const boysContainer = document.getElementById("boys-products");
-  const girlsContainer = document.getElementById("girls-products");
-
-  if (!allContainer || !boysContainer || !girlsContainer) {
-    console.error("Ryveo product containers are missing.");
-    return;
-  }
-
-  allContainer.replaceChildren();
-  boysContainer.replaceChildren();
-  girlsContainer.replaceChildren();
-
-  products.forEach((product, index) => {
-
-    // All products
-    allContainer.appendChild(
-      createProductCard(product, index)
-    );
-
-    // Boys collection
-    if (product.category === "boys") {
-      boysContainer.appendChild(
-        createProductCard(product, index)
-      );
-    }
-
-    // Girls collection
-    if (product.category === "girls") {
-      girlsContainer.appendChild(
-        createProductCard(product, index)
-      );
-    }
-
-  });
-}
-
-
-/* =====================================
-   WHATSAPP ORDER SYSTEM
-===================================== */
-
+// WhatsApp order function
 function sendOrder(product, colour, size, quantity) {
 
   if (!/^91\d{10}$/.test(WHATSAPP_NUMBER)) {
-    alert("Please check your Ryveo WhatsApp number.");
+    alert("Please check the WhatsApp number in js/script.js.");
     return;
   }
 
-  if (!colour || !size || quantity < 1) {
-    alert("Please select all product options.");
-    return;
-  }
-
-  const total = product.price * quantity;
+  const qty = Number(quantity);
+  const total = product.price * qty;
 
   const message = [
     "Hi Ryveo! I'd like to place an order.",
     "",
     "Product: " + product.name,
     "Price per item: Rs. " + product.price,
-    "Quantity: " + quantity,
+    "Quantity: " + qty,
     "Total product price: Rs. " + total,
     "Colour: " + colour,
     "Size: " + size,
     "",
-    "Please confirm availability and delivery charges.",
-    "",
-    "Thank you!"
+    "Please confirm availability and delivery charges."
   ].join("\n");
 
   const url =
@@ -431,93 +184,64 @@ function sendOrder(product, colour, size, quantity) {
     "?text=" +
     encodeURIComponent(message);
 
-  window.open(
-    url,
-    "_blank",
-    "noopener,noreferrer"
-  );
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 
 
-/* =====================================
-   PRODUCT QUICK VIEW MODAL
-===================================== */
-
-const modal = document.getElementById("product-modal");
-
-const modalImage = document.getElementById("modal-image");
-const modalTitle = document.getElementById("modal-title");
-const modalDescription = document.getElementById("modal-description");
-const modalPrice = document.getElementById("modal-price");
-
-const modalColour = document.getElementById("modal-colour");
-const modalSize = document.getElementById("modal-size");
-const modalQuantity = document.getElementById("modal-quantity");
-
-const closeButton = document.getElementById("modal-close");
-const orderButton = document.getElementById("modal-order");
-
-let activeProduct = null;
-
-
+// Open product quick view
 function openProduct(product) {
-
-  if (!modal) return;
 
   activeProduct = product;
 
-  modalImage.src = product.image;
-  modalImage.alt = product.name;
+  const modal = document.getElementById("product-modal");
 
-  modalTitle.textContent = product.name;
+  document.getElementById("modal-image").src = product.image;
+  document.getElementById("modal-image").alt = product.name;
 
-  modalDescription.textContent = product.description;
+  document.getElementById("modal-title").textContent =
+    product.name;
 
-  modalPrice.textContent = "₹" + product.price;
+  document.getElementById("modal-description").textContent =
+    product.description;
 
-  // Colour options
-  modalColour.replaceChildren();
+  document.getElementById("modal-price").textContent =
+    "₹" + product.price;
 
-  product.colours.forEach(colour => {
-    modalColour.add(
-      new Option(colour, colour)
-    );
+  const colour = document.getElementById("modal-colour");
+  const size = document.getElementById("modal-size");
+  const quantity = document.getElementById("modal-quantity");
+
+  colour.replaceChildren();
+  size.replaceChildren();
+  quantity.replaceChildren();
+
+  product.colours.forEach(value => {
+    colour.add(new Option(value, value));
   });
 
-  // Size options
-  modalSize.replaceChildren();
-
-  product.sizes.forEach(size => {
-    modalSize.add(
-      new Option("Size: " + size, size)
-    );
+  product.sizes.forEach(value => {
+    size.add(new Option("Size: " + value, value));
   });
 
-  // Quantity options
-  modalQuantity.replaceChildren();
-
-  for (let i = 1; i <= 5; i++) {
-    modalQuantity.add(
-      new Option("Quantity: " + i, String(i))
-    );
+  for (let n = 1; n <= 5; n++) {
+    quantity.add(new Option("Quantity: " + n, String(n)));
   }
 
   modal.classList.add("open");
-
   modal.setAttribute("aria-hidden", "false");
 
   document.body.style.overflow = "hidden";
 
-  closeButton.focus();
+  document.getElementById("modal-close").focus();
 }
 
 
+// Close product quick view
 function closeProduct() {
 
-  if (!modal) return;
+  const modal = document.getElementById("product-modal");
 
   modal.classList.remove("open");
-
   modal.setAttribute("aria-hidden", "true");
 
   document.body.style.overflow = "";
@@ -526,60 +250,228 @@ function closeProduct() {
 }
 
 
-/* =====================================
-   MODAL EVENTS
-===================================== */
+// Create product cards
+function createProductCard(product, index) {
 
-if (closeButton) {
-  closeButton.addEventListener("click", closeProduct);
+  const card = document.createElement("article");
+  card.className = "product";
+
+  const imageWrap = document.createElement("div");
+  imageWrap.className = "image-wrap";
+
+  imageWrap.addEventListener("click", () => {
+    openProduct(product);
+  });
+
+  const image = document.createElement("img");
+
+  image.src = product.image;
+  image.alt = product.name;
+  image.loading = index < 4 ? "eager" : "lazy";
+
+  image.onerror = () => {
+
+    image.style.display = "none";
+
+    imageWrap.classList.add("image-missing");
+
+    const fallback = document.createElement("span");
+
+    fallback.className = "image-fallback";
+
+    fallback.textContent =
+      "Image not found: " + product.image;
+
+    imageWrap.append(fallback);
+  };
+
+
+  const tag = document.createElement("span");
+  tag.className = "product-tag";
+
+  tag.textContent =
+    product.name === "custom print baby"
+      ? "Make it yours"
+      : index === 0
+        ? "Featured"
+        : "Ryveo original";
+
+
+  const hint = document.createElement("span");
+  hint.className = "view-hint";
+  hint.textContent = "Tap to view ↗";
+
+  imageWrap.append(image, tag, hint);
+
+
+  const info = document.createElement("div");
+  info.className = "product-info";
+
+
+  const title = document.createElement("h3");
+  title.textContent = product.name;
+
+  title.addEventListener("click", () => {
+    openProduct(product);
+  });
+
+
+  const description = document.createElement("p");
+  description.textContent = product.description;
+
+
+  const priceRow = document.createElement("div");
+  priceRow.className = "price-row";
+
+
+  const price = document.createElement("strong");
+  price.className = "price";
+  price.textContent = "₹" + product.price;
+
+
+  const priceLabel = document.createElement("span");
+  priceLabel.className = "price-label";
+  priceLabel.textContent = "PRODUCT PRICE";
+
+  priceRow.append(price, priceLabel);
+
+
+  const colour = makeSelect(
+    product.colours,
+    "Choose colour for " + product.name
+  );
+
+  const size = makeSelect(
+    product.sizes,
+    "Choose size for " + product.name,
+    "Size: "
+  );
+
+  const quantity = makeSelect(
+    ["1", "2", "3", "4", "5"],
+    "Choose quantity for " + product.name,
+    "Quantity: "
+  );
+
+
+  const order = document.createElement("button");
+
+  order.type = "button";
+  order.className = "order";
+  order.textContent = "ORDER ON WHATSAPP ↗";
+
+  order.addEventListener("click", () => {
+    sendOrder(
+      product,
+      colour.value,
+      size.value,
+      quantity.value
+    );
+  });
+
+
+  info.append(
+    title,
+    description,
+    priceRow,
+    colour,
+    size,
+    quantity,
+    order
+  );
+
+  card.append(imageWrap, info);
+
+  return card;
 }
 
-if (modal) {
 
-  modal.addEventListener("click", event => {
+// Render all products
+function renderProducts() {
 
-    if (event.target === modal) {
+  const allGrid = document.getElementById("products");
+  const boysGrid = document.getElementById("boys-products");
+  const girlsGrid = document.getElementById("girls-products");
+
+  if (!allGrid || !boysGrid || !girlsGrid) {
+
+    console.error(
+      "Ryveo: one or more product grid containers are missing from index.html."
+    );
+
+    return;
+  }
+
+  allGrid.replaceChildren();
+  boysGrid.replaceChildren();
+  girlsGrid.replaceChildren();
+
+  products.forEach((product, index) => {
+
+    allGrid.append(
+      createProductCard(product, index)
+    );
+
+    const categoryCard = createProductCard(product, index);
+
+    if (product.category === "boys") {
+      boysGrid.append(categoryCard);
+    } else {
+      girlsGrid.append(categoryCard);
+    }
+
+  });
+}
+
+
+// Website initialization
+document.addEventListener("DOMContentLoaded", () => {
+
+  renderProducts();
+
+
+  // Close button
+  document
+    .getElementById("modal-close")
+    .addEventListener("click", closeProduct);
+
+
+  // Click outside modal to close
+  document
+    .getElementById("product-modal")
+    .addEventListener("click", event => {
+
+      if (event.target.id === "product-modal") {
+        closeProduct();
+      }
+
+    });
+
+
+  // Escape key closes modal
+  document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
       closeProduct();
     }
 
   });
 
-}
 
-document.addEventListener("keydown", event => {
+  // Modal WhatsApp order
+  document
+    .getElementById("modal-order")
+    .addEventListener("click", () => {
 
-  if (event.key === "Escape") {
-    closeProduct();
-  }
+      if (!activeProduct) return;
 
-});
+      sendOrder(
+        activeProduct,
+        document.getElementById("modal-colour").value,
+        document.getElementById("modal-size").value,
+        document.getElementById("modal-quantity").value
+      );
 
-if (orderButton) {
-
-  orderButton.addEventListener("click", () => {
-
-    if (!activeProduct) return;
-
-    sendOrder(
-      activeProduct,
-      modalColour.value,
-      modalSize.value,
-      Number(modalQuantity.value)
-    );
-
-  });
-
-}
-
-
-/* =====================================
-   WEBSITE INITIALIZATION
-===================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  renderProducts();
-
-  console.log("RYVEO website successfully initialized.");
+    });
 
 });
