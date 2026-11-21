@@ -179,3 +179,33 @@ body.ryveo-theme-mixed .ryveo-summary .ryveo-coupon-hint,body.ryveo-theme-mixed 
 .ryveo-sad-celebration.is-closing .ryveo-sad-card{transform:translateY(20px) scale(.94);opacity:0;transition:all .3s ease}
 @media(max-width:600px){body.ryveo-theme-mixed{background:linear-gradient(155deg,#10110e 0%,#10110e 49.8%,#fff0f4 50.2%,#fff0f4 100%)}}
 @media(prefers-reduced-motion:reduce){.ryveo-sad-rain span,.ryveo-sad-face,.ryveo-sad-card,.ryveo-sad-celebration{animation:none!important;transition:none!important}}
+
+
+/* Wishlist + favourites */
+.ryveo-wishlist-link{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid currentColor;font-size:10px;font-weight:900;letter-spacing:1px;white-space:nowrap}
+.ryveo-wishlist-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:50%;background:#ff4f86;color:#fff;font-size:10px}
+.ryveo-card-actions{grid-template-columns:1fr auto 1fr}
+.ryveo-card-actions .ryveo-fav-btn,.ryveo-fav-btn{display:inline-grid;place-items:center;min-width:42px;min-height:39px;padding:7px 10px;border:1px solid #ff4f86;background:transparent;color:#ff4f86;font-size:21px;line-height:1;cursor:pointer}
+.ryveo-card-actions .ryveo-fav-btn.is-favourite,.ryveo-fav-btn.is-favourite{background:#ff4f86;color:#fff}
+.ryveo-product-fav{font-size:11px!important;min-height:48px!important}
+.ryveo-wishlist-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.ryveo-wishlist-card{display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1fr);gap:18px;padding:14px;border:1px solid var(--edge,#444);background:var(--card,#191a16);align-items:center}
+.ryveo-wishlist-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#222}
+.ryveo-wishlist-info h2{font:700 clamp(17px,2vw,24px)/1.1 'Space Grotesk';margin:9px 0}
+.ryveo-wishlist-info>strong{display:block;font-size:18px;margin:10px 0 16px}
+.ryveo-wishlist-tag{font-size:9px;letter-spacing:1.3px;color:var(--accent,#d6ff3f);font-weight:900}
+.ryveo-wishlist-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ryveo-wishlist-actions button{padding:11px 12px;border:1px solid var(--accent,#d6ff3f);background:var(--accent,#d6ff3f);color:#111;font-size:9px;font-weight:900;letter-spacing:.6px;cursor:pointer}
+.ryveo-wishlist-actions .ryveo-wish-remove{background:transparent;color:#ff4f86;border-color:#ff4f86}
+.ryveo-wishlist-empty{text-align:center;padding:70px 20px;border:1px dashed var(--edge,#555);background:var(--card,#191a16)}
+.ryveo-wishlist-empty>span{font-size:68px;color:#ff4f86}.ryveo-wishlist-empty h2{font:800 clamp(25px,5vw,40px) 'Space Grotesk'}.ryveo-wishlist-empty p{color:var(--soft,#aaa);margin:0 auto 22px;max-width:430px;line-height:1.7}
+body.ryveo-theme-girls .ryveo-wishlist-card{background:#fff9fb;border-color:#f4cbd9;color:#241823}
+body.ryveo-theme-mixed .ryveo-checkout-summary{max-width:900px}
+body.ryveo-theme-mixed .ryveo-checkout-card{position:relative;overflow:hidden;min-height:390px;padding-right:40%;background:linear-gradient(105deg,#191a17 0 58%,#fff0f4 58% 100%);border:1px solid #ff9fbe;color:#f7f5ef}
+body.ryveo-theme-mixed .ryveo-checkout-card:after{content:"✿\A THE IT-GIRL EDIT\A\A SOFT LOOK.\A LOUD PRESENCE.\A ♡";white-space:pre-line;position:absolute;z-index:0;right:2.5%;top:7%;bottom:7%;width:34%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;background:radial-gradient(circle at 20% 15%,#fff 0 4%,transparent 5%),radial-gradient(circle at 80% 82%,#ffb7ce 0 8%,transparent 9%),linear-gradient(145deg,#fff9fb,#f7d9e5 55%,#e9dfff);border:1px solid #edb4c9;border-radius:22px;color:#6d3450;font:900 clamp(13px,2vw,20px)/1.65 'Space Grotesk';letter-spacing:1px;box-shadow:0 16px 38px #29102122;transform:rotate(1.5deg)}
+body.ryveo-theme-mixed .ryveo-checkout-card>*{position:relative;z-index:1;max-width:100%}
+body.ryveo-theme-mixed .ryveo-checkout-card h2,body.ryveo-theme-mixed .ryveo-checkout-item,body.ryveo-theme-mixed .ryveo-checkout-total-line{max-width:100%;color:#f7f5ef}
+body.ryveo-theme-mixed .ryveo-checkout-payable span,body.ryveo-theme-mixed .ryveo-checkout-payable strong{color:#d6ff3f}
+body.ryveo-theme-mixed .ryveo-checkout-card>p{max-width:100%;color:#d8d4d0}
+@media(max-width:760px){.ryveo-wishlist-grid{grid-template-columns:1fr}.ryveo-wishlist-card{grid-template-columns:112px minmax(0,1fr);gap:12px;padding:10px}.ryveo-wishlist-actions button{flex:1}.ryveo-card-actions{grid-template-columns:1fr auto 1fr}}
+@media(max-width:560px){body.ryveo-theme-mixed .ryveo-checkout-card{padding-right:clamp(16px,4vw,24px);padding-bottom:140px;background:linear-gradient(180deg,#191a17 0 66%,#fff0f4 66% 100%)}body.ryveo-theme-mixed .ryveo-checkout-card:after{top:auto;left:16px;right:16px;bottom:12px;width:auto;height:105px;min-height:105px;flex-direction:row;gap:10px;font-size:11px;line-height:1.4;transform:none}}
