@@ -52,3 +52,41 @@
 .ryveo-coupon-message{color:#d6ff3f}.ryveo-coupon-message.is-error{color:#ff9999}
 .ryveo-summary-line.ryveo-discount{color:#d6ff3f}
 .ryveo-summary-line.ryveo-total{border-top:1px solid #555;padding-top:15px;margin-top:15px;font-size:16px;font-weight:900}
+
+/* Smooth checkout entrance and clear order total */
+@keyframes ryveoCheckoutEnter{0%{opacity:0;transform:translate3d(0,22px,0);filter:blur(5px)}100%{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}}
+body.ryveo-page{animation:ryveoCheckoutEnter .72s cubic-bezier(.16,1,.3,1) both}
+.ryveo-checkout-summary{margin:24px 0 30px;max-width:650px}
+.ryveo-checkout-card{border:1px solid #3c3e31;background:linear-gradient(145deg,#1b1d16,#13140f);padding:clamp(18px,3vw,28px);box-shadow:0 18px 55px #0003;animation:ryveoCheckoutEnter .55s cubic-bezier(.16,1,.3,1) both}
+.ryveo-checkout-card h2{font:800 17px 'Space Grotesk';letter-spacing:1px;margin:0 0 18px}
+.ryveo-checkout-items{display:grid;gap:10px;padding-bottom:16px;border-bottom:1px solid #34352b}
+.ryveo-checkout-item,.ryveo-checkout-total-line{display:flex;justify-content:space-between;gap:18px;align-items:center;font-size:12px;line-height:1.5}
+.ryveo-checkout-item span{color:#e9e9df}.ryveo-checkout-item small{color:#a7a897}.ryveo-checkout-item b{white-space:nowrap}
+.ryveo-checkout-total-line{margin-top:13px;color:#b9b9ad}
+.ryveo-checkout-saving{color:#d6ff3f}
+.ryveo-checkout-payable{display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid #6a6c58;margin-top:18px;padding-top:18px}
+.ryveo-checkout-payable span{font-size:11px;font-weight:900;letter-spacing:1.4px;color:#d6ff3f}
+.ryveo-checkout-payable strong{font:800 clamp(25px,4vw,34px) 'Space Grotesk';color:#d6ff3f}
+.ryveo-checkout-card>p{font-size:10px;line-height:1.6;color:#9e9f91;margin:14px 0 0}
+.ryveo-checkout-coupon{display:flex;align-items:center;gap:12px;padding:13px;margin:-5px 0 20px;background:rgba(214,255,63,.09);border:1px solid rgba(214,255,63,.45);animation:ryveoCouponBanner .55s cubic-bezier(.16,1,.3,1) both}
+.ryveo-checkout-coupon>span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#d6ff3f;color:#10110e;font-weight:900}
+.ryveo-checkout-coupon b,.ryveo-checkout-coupon small{display:block}.ryveo-checkout-coupon b{font-size:11px;letter-spacing:.8px;color:#d6ff3f}.ryveo-checkout-coupon small{font-size:10px;color:#e9e9df;margin-top:4px}
+@keyframes ryveoCouponBanner{from{opacity:0;transform:translateY(-10px) scale(.98)}to{opacity:1;transform:none}}
+/* Full-screen coupon celebration */
+.ryveo-coupon-celebration{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;padding:20px;background:rgba(8,9,7,.86);backdrop-filter:blur(9px);animation:ryveoOverlayIn .3s ease both}
+.ryveo-coupon-pop{position:relative;z-index:2;width:min(430px,100%);padding:38px 24px 28px;text-align:center;background:#171912;border:1px solid #d6ff3f;box-shadow:0 0 0 8px rgba(214,255,63,.07),0 24px 90px #000b;animation:ryveoCouponPop .65s cubic-bezier(.16,1,.3,1) both}
+.ryveo-coupon-check{width:58px;height:58px;display:grid;place-items:center;margin:0 auto 18px;border-radius:50%;background:#d6ff3f;color:#10110e;font-size:32px;font-weight:900;box-shadow:0 0 35px #d6ff3f55}
+.ryveo-coupon-eyebrow{font-size:9px;letter-spacing:3px;color:#d6ff3f;font-weight:900}
+.ryveo-coupon-pop h2{font:900 clamp(26px,7vw,38px)/1 'Space Grotesk';letter-spacing:-1.5px;margin:9px 0}
+.ryveo-coupon-pop>strong{display:inline-block;margin:9px 0;padding:8px 14px;border:1px dashed #d6ff3f;color:#d6ff3f;letter-spacing:2px}
+.ryveo-coupon-pop>p:not(.ryveo-coupon-eyebrow){color:#c7c8bb;font-size:13px}.ryveo-coupon-pop>p b{color:#d6ff3f}
+.ryveo-coupon-pop>span{display:block;font-size:10px;letter-spacing:2px;font-weight:900;color:#d6ff3f;margin:18px 0}
+.ryveo-coupon-pop button{border:0;background:#d6ff3f;color:#10110e;padding:13px 24px;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer}
+.ryveo-coupon-confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none}.ryveo-coupon-confetti i{position:absolute;top:-15px;left:var(--x);width:7px;height:12px;background:#d6ff3f;opacity:0;animation:ryveoConfettiFall 2.1s var(--delay) ease-in forwards;transform:rotate(var(--spin))}
+.ryveo-coupon-confetti i:nth-child(3n){background:#fff}.ryveo-coupon-confetti i:nth-child(3n+1){background:#ff4f86}
+@keyframes ryveoOverlayIn{from{opacity:0}to{opacity:1}}
+@keyframes ryveoCouponPop{0%{opacity:0;transform:translateY(28px) scale(.82)}65%{opacity:1;transform:translateY(-5px) scale(1.025)}100%{opacity:1;transform:none}}
+@keyframes ryveoConfettiFall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:.8;transform:translateY(110vh) rotate(720deg)}}
+.ryveo-coupon-celebration.is-closing{animation:ryveoOverlayOut .3s ease both}.ryveo-coupon-celebration.is-closing .ryveo-coupon-pop{transform:translateY(12px) scale(.96);opacity:0;transition:.25s}
+@keyframes ryveoOverlayOut{to{opacity:0}}
+@media(prefers-reduced-motion:reduce){body.ryveo-page,.ryveo-checkout-card,.ryveo-checkout-coupon,.ryveo-coupon-celebration,.ryveo-coupon-pop,.ryveo-coupon-confetti i{animation:none!important;transition:none!important}}
