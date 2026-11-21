@@ -29,3 +29,21 @@ function render(){
 }
 render();
 document.getElementById("year").textContent=new Date().getFullYear();
+
+
+/* Smooth navigation between RYVEO collection pages */
+(function(){
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduceMotion)return;
+  document.addEventListener("click",function(event){
+    const link=event.target.closest("a");
+    if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    if(link.target==="_blank"||link.hasAttribute("download"))return;
+    const url=new URL(link.href,window.location.href);
+    if(url.origin!==window.location.origin||url.pathname===window.location.pathname&&url.hash)return;
+    if(!/\.html?$/i.test(url.pathname))return;
+    event.preventDefault();
+    document.body.classList.add("ryveo-page-leaving");
+    window.setTimeout(function(){window.location.href=url.href;},190);
+  });
+})();
