@@ -96,8 +96,8 @@ body.ryveo-page-leaving{animation:ryveoPageLeave .2s ease-in both;pointer-events
 /* FULL-PAGE COLLECTION ART — subtle texture behind all content */
 body.boys-page,body.girls-page{position:relative;isolation:isolate}
 body.boys-page:before,body.girls-page:before{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-repeat:repeat;background-size:360px 360px;opacity:.19;
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-repeat:repeat;background-size:320px 320px;opacity:.42;
 }
 body.boys-page:before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23d6ff3f' stroke-opacity='.34' stroke-width='2'%3E%3Cpath d='M32 56l13 13-13 13-13-13zM278 35l20 20m-20 0l20-20M75 230l24-24m-24 0l24 24M305 270l15 15m-15 0l15-15'/%3E%3Cpath d='M155 45l-9 23h15l-8 23 26-31h-16l9-15zM38 305l25-8-8 25m-17-17l28 28'/%3E%3Cpath d='M215 155c18-18 36-18 54 0m-54 0c18 18 36 18 54 0M120 315h35m-17-17v35' stroke-dasharray='5 8'/%3E%3C/g%3E%3Cg fill='%23d6ff3f' fill-opacity='.16' font-family='Arial,sans-serif' font-size='12' font-weight='bold' letter-spacing='3'%3E%3Ctext x='18' y='150' transform='rotate(-12 18 150)'%3ENO RULES%3C/text%3E%3Ctext x='220' y='220' transform='rotate(12 220 220)'%3EOFF GRID%3C/text%3E%3C/g%3E%3C/svg%3E");
@@ -106,17 +106,19 @@ body.girls-page:before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23e56b9a' stroke-opacity='.38' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M48 62c-17-18-34 7 0 29 34-22 17-47 0-29zm0 0v29M278 48l3 10 10 3-10 3-3 10-3-10-10-3 10-3zM90 250l3 9 9 3-9 3-3 9-3-9-9-3 9-3zM285 245c-15-17-31 5 0 25 31-20 15-42 0-25z'/%3E%3Cpath d='M175 120c-10-15-30-4-20 12l20 19 20-19c10-16-10-27-20-12zM35 300q14-18 28 0t28 0M250 320q14-18 28 0t28 0' stroke-dasharray='3 6'/%3E%3C/g%3E%3Cg fill='%23a78bdc' fill-opacity='.25' font-family='Arial,sans-serif' font-size='13' font-style='italic'%3E%3Ctext x='205' y='150' transform='rotate(9 205 150)'%3Exoxo%3C/text%3E%3Ctext x='18' y='190' transform='rotate(-10 18 190)'%3Epretty things%3C/text%3E%3C/g%3E%3C/svg%3E");
 }
 body.boys-page:after,body.girls-page:after{
-  position:fixed;right:-.06em;top:43%;z-index:-1;pointer-events:none;
+  position:fixed;right:-.06em;top:43%;z-index:0;pointer-events:none;
   font-family:'Space Grotesk',sans-serif;font-size:clamp(100px,20vw,300px);
   font-weight:700;line-height:.8;letter-spacing:-.1em;white-space:nowrap;
-  opacity:.035;transform:rotate(-90deg) translateX(20%);transform-origin:right center;
+  opacity:.075;transform:rotate(-90deg) translateX(20%);transform-origin:right center;
 }
 body.boys-page:after{content:"OFF GRID";color:#d6ff3f}
 body.girls-page:after{content:"IT GIRL";color:#d83b73;font-family:'Outfit',sans-serif}
 body.boys-page>main,body.girls-page>main,body.boys-page>.collection-header,body.girls-page>.collection-header,body.boys-page>.collection-footer,body.girls-page>.collection-footer{position:relative;z-index:1}
+body.boys-page>main,body.girls-page>main{background:transparent}
+body.boys-page>main>*,body.girls-page>main>*{position:relative;z-index:1}
 @media(max-width:700px){
-  body.boys-page:before,body.girls-page:before{background-size:290px 290px;opacity:.13}
-  body.boys-page:after,body.girls-page:after{font-size:120px;opacity:.025;right:-.12em}
+  body.boys-page:before,body.girls-page:before{background-size:260px 260px;opacity:.34}
+  body.boys-page:after,body.girls-page:after{font-size:120px;opacity:.055;right:-.12em}
 }
 @media(prefers-reduced-motion:reduce){
   body.boys-page:before,body.girls-page:before,body.boys-page:after,body.girls-page:after{transition:none}
