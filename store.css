@@ -90,3 +90,19 @@ body.ryveo-page{animation:ryveoCheckoutEnter .72s cubic-bezier(.16,1,.3,1) both}
 .ryveo-coupon-celebration.is-closing{animation:ryveoOverlayOut .3s ease both}.ryveo-coupon-celebration.is-closing .ryveo-coupon-pop{transform:translateY(12px) scale(.96);opacity:0;transition:.25s}
 @keyframes ryveoOverlayOut{to{opacity:0}}
 @media(prefers-reduced-motion:reduce){body.ryveo-page,.ryveo-checkout-card,.ryveo-checkout-coupon,.ryveo-coupon-celebration,.ryveo-coupon-pop,.ryveo-coupon-confetti i{animation:none!important;transition:none!important}}
+
+/* Smooth cart item removal and coupon state transitions */
+.ryveo-cart-row{opacity:1;transform:translate3d(0,0,0);max-height:320px;overflow:hidden;transition:opacity .34s ease,transform .42s cubic-bezier(.22,1,.36,1),max-height .42s ease,margin .42s ease,padding .42s ease,border-width .42s ease}
+.ryveo-cart-row.is-removing{opacity:0;transform:translate3d(34px,0,0) scale(.97);max-height:0;margin-top:0!important;margin-bottom:0!important;padding-top:0!important;padding-bottom:0!important;border-bottom-width:0!important;pointer-events:none}
+.ryveo-remove{transition:color .2s ease,background .2s ease,opacity .2s ease,transform .2s ease}
+.ryveo-remove:hover{transform:translateY(-1px)}
+.ryveo-remove:disabled{opacity:.45;cursor:wait}
+#ryveo-apply-coupon{min-width:112px;transition:transform .22s cubic-bezier(.16,1,.3,1),background .22s ease,color .22s ease,box-shadow .22s ease}
+#ryveo-apply-coupon:hover{transform:translateY(-2px);box-shadow:0 7px 20px #0003}
+.ryveo-coupon-message{transition:opacity .25s ease,transform .25s ease}
+.ryveo-coupon-celebration{opacity:1;transition:opacity .42s ease,backdrop-filter .42s ease}
+.ryveo-coupon-pop{opacity:1;transform:translateY(0) scale(1);transition:opacity .38s ease,transform .48s cubic-bezier(.22,1,.36,1)}
+.ryveo-coupon-celebration.is-closing{opacity:0;pointer-events:none;backdrop-filter:blur(0)}
+.ryveo-coupon-celebration.is-closing .ryveo-coupon-pop{opacity:0;transform:translateY(18px) scale(.94)}
+.ryveo-coupon-celebration.is-closing .ryveo-coupon-confetti{opacity:0;transition:opacity .25s ease}
+@media(prefers-reduced-motion:reduce){.ryveo-cart-row,#ryveo-apply-coupon,.ryveo-remove,.ryveo-coupon-message,.ryveo-coupon-celebration,.ryveo-coupon-pop,.ryveo-coupon-confetti{transition:none!important;animation:none!important}}

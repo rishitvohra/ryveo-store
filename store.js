@@ -25,7 +25,7 @@
   overlay.setAttribute("role","status");overlay.setAttribute("aria-live","polite");
   const confetti=Array.from({length:28},(_,i)=>'<i style="--x:'+Math.round(Math.random()*100)+'%;--delay:'+(Math.random()*.55).toFixed(2)+'s;--spin:'+(Math.round(Math.random()*360))+'deg"></i>').join("");
   overlay.innerHTML='<div class="ryveo-coupon-confetti">'+confetti+'</div><div class="ryveo-coupon-pop"><div class="ryveo-coupon-check">✓</div><p class="ryveo-coupon-eyebrow">NICE ONE!</p><h2>COUPON APPLIED</h2><strong>NEWMEM10</strong><p>You just saved <b>'+money(amount)+'</b></p><span>10% OFF YOUR ORDER</span><button type="button" aria-label="Close coupon celebration">LET’S GO</button></div>';
-  document.body.append(overlay);const close=()=>{if(overlay.classList.contains("is-closing"))return;clearTimeout(overlay._closeTimer);overlay.classList.add("is-closing");setTimeout(()=>overlay.remove(),480)};
+  document.body.append(overlay);const close=()=>{if(overlay.classList.contains("is-closing"))return;clearTimeout(overlay._closeTimer);document.removeEventListener("keydown",overlay._keyClose);overlay.classList.add("is-closing");setTimeout(()=>overlay.remove(),480)};
   overlay.querySelector("button").addEventListener("click",close);overlay.addEventListener("click",e=>{if(e.target===overlay)close()});
   overlay._closeTimer=setTimeout(close,4200);overlay._keyClose=e=>{if(e.key==="Escape")close()};document.addEventListener("keydown",overlay._keyClose,{once:true});
  }
