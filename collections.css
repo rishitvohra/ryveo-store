@@ -124,3 +124,105 @@ body.boys-page>main>*,body.girls-page>main>*{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){
   body.boys-page:before,body.girls-page:before,body.boys-page:after,body.girls-page:after{transition:none}
 }
+
+
+/* OFF-GRID MEN — premium graffiti editorial theme */
+.boys-page{
+  --bg:#090a08;--text:#f4f3eb;--soft:#aaa99d;--edge:rgba(214,255,63,.22);
+  --card:rgba(22,24,19,.94);--image-bg:#1a1c16;--select-bg:#10120d;
+  --accent:#c9f34a;--button-ink:#10110e;--art-shadow:rgba(201,243,74,.18);
+  background-color:#090a08;
+  background-image:
+    radial-gradient(ellipse at 12% 12%,rgba(201,243,74,.13),transparent 34%),
+    radial-gradient(ellipse at 88% 48%,rgba(201,243,74,.09),transparent 38%),
+    linear-gradient(180deg,#090a08 0%,#10120e 48%,#090a08 100%);
+}
+.boys-page .collection-header{
+  position:sticky!important;top:0;background:rgba(9,10,8,.9);
+  border-bottom:1px solid rgba(201,243,74,.24);
+  box-shadow:0 10px 35px rgba(0,0,0,.22)
+}
+.boys-page .collection-logo{font-size:30px;letter-spacing:5px;text-shadow:0 0 22px rgba(201,243,74,.12)}
+.boys-page .collection-logo span{color:#c9f34a}
+.boys-page .collection-nav a{color:#e9e9df}
+.boys-page .collection-nav a:hover{color:#c9f34a}
+.boys-page .collection-hero{
+  min-height:690px;padding-top:clamp(75px,9vw,120px);padding-bottom:clamp(75px,9vw,120px);
+  background:
+    radial-gradient(ellipse at 75% 40%,rgba(201,243,74,.14),transparent 35%),
+    linear-gradient(110deg,rgba(9,10,8,.98),rgba(9,10,8,.68));
+}
+.boys-page .collection-hero:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='360' viewBox='0 0 560 360'%3E%3Cg fill='none' stroke='%23c9f34a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M55 70l12 28 28 12-28 12-12 28-12-28-28-12 28-12zM470 48l5 18 18 5-18 5-5 18-5-18-18-5 18-5zM80 280l35-35m-35 0l35 35M420 280l28-28m-28 0l28 28M250 35l-16 40h24l-12 42 48-58h-29l13-24z'/%3E%3Cpath d='M170 205q30-35 60 0t60 0M360 135c-20-24-48 7 0 43 48-36 20-67 0-43z' stroke-dasharray='6 9'/%3E%3C/g%3E%3Cg fill='%23c9f34a' font-family='Arial' font-size='15' font-weight='bold' letter-spacing='4' opacity='.8'%3E%3Ctext x='25' y='210' transform='rotate(-12 25 210)'%3ENO RULES%3C/text%3E%3Ctext x='390' y='330' transform='rotate(8 390 330)'%3EOFF GRID%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size:560px 360px;background-repeat:repeat;
+  mask-image:linear-gradient(90deg,#000,transparent 88%);
+}
+.boys-page .collection-copy{max-width:700px}
+.boys-page .collection-kicker{color:#c9f34a}
+.boys-page .collection-title{
+  font-size:clamp(76px,11vw,150px);line-height:.78;letter-spacing:-.105em;
+  text-shadow:0 10px 40px rgba(0,0,0,.35)
+}
+.boys-page .collection-title span{color:#c9f34a;text-shadow:4px 4px 0 rgba(201,243,74,.12)}
+.boys-page .collection-desc{color:#c2c3b7;max-width:440px}
+.boys-page .collection-btn{border-radius:2px;box-shadow:5px 5px 0 rgba(201,243,74,.18)}
+.boys-page .collection-btn:hover{background:transparent;color:#c9f34a;box-shadow:2px 2px 0 rgba(201,243,74,.18)}
+.boys-page .collection-btn.ghost{border-color:rgba(245,244,236,.28);color:#f5f4ec;box-shadow:none}
+.boys-page .collection-art{max-width:500px}
+.boys-page .collection-art img{
+  border:1px solid rgba(201,243,74,.38);box-shadow:20px 20px 0 rgba(201,243,74,.1),0 28px 80px rgba(0,0,0,.45);
+  filter:contrast(1.04) saturate(.9)
+}
+.boys-page .art-sticker{
+  width:118px;height:118px;border-radius:4px;clip-path:polygon(8% 0,100% 9%,91% 100%,0 89%);
+  background:#c9f34a;color:#10110e;transform:rotate(-10deg);
+  font-size:16px;box-shadow:0 15px 35px #0008
+}
+.boys-page .art-caption{color:#c9f34a}
+.boys-page .collection-marquee{background:#c9f34a;color:#10110e}
+.boys-page .collection-products{
+  background:linear-gradient(180deg,rgba(9,10,8,.12),rgba(9,10,8,.72));
+  border-top:1px solid rgba(201,243,74,.12)
+}
+.boys-page .products-top h2{font-size:clamp(40px,6vw,72px);letter-spacing:-.085em}
+.boys-page .collection-product{
+  position:relative;border:1px solid rgba(245,244,236,.13);
+  background:linear-gradient(155deg,rgba(29,31,24,.98),rgba(15,16,13,.98));
+  border-radius:2px;padding:9px;box-shadow:0 12px 32px rgba(0,0,0,.18)
+}
+.boys-page .collection-product:hover{
+  border-color:rgba(201,243,74,.7);box-shadow:0 18px 45px rgba(0,0,0,.42),0 0 25px rgba(201,243,74,.07)
+}
+.boys-page .collection-product-image{border-radius:1px}
+.boys-page .collection-product-tag{background:#c9f34a;color:#10110e}
+.boys-page .collection-product-info h3{color:#f5f4ec}
+.boys-page .collection-product-info p{color:#aaa99d}
+.boys-page .collection-product-price{color:#c9f34a}
+.boys-page .collection-product select{border-color:#414438;background:#10120d;color:#f5f4ec}
+.boys-page .collection-order{background:#c9f34a;color:#10110e;border-color:#c9f34a}
+.boys-page .collection-order:hover{background:transparent;color:#c9f34a}
+.boys-page .collection-custom{
+  border:1px solid rgba(201,243,74,.26);
+  background:radial-gradient(ellipse at 90% 0,rgba(201,243,74,.12),transparent 45%),#171912;
+  box-shadow:0 18px 55px rgba(0,0,0,.2)
+}
+.boys-page .collection-custom .collection-kicker{color:#c9f34a}
+.boys-page .collection-footer{background:#080907;border-color:rgba(201,243,74,.18);color:#929488}
+.boys-page .collection-footer a{color:#c9f34a}
+.boys-page:after{opacity:.09!important;color:#c9f34a!important}
+.boys-page:before{opacity:.58!important;background-size:300px 300px!important}
+@keyframes offGridDoodleFloat{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-9px,0) rotate(2deg)}}
+.boys-page .art-sticker{animation:offGridDoodleFloat 5s ease-in-out infinite}
+.boys-page .collection-hero:after{
+  content:"✳";position:absolute;right:47%;top:16%;font-size:35px;color:#c9f34a;
+  text-shadow:0 0 22px #c9f34a88;opacity:.7;pointer-events:none;
+  animation:offGridDoodleFloat 6s ease-in-out infinite
+}
+@media(max-width:700px){
+  .boys-page .collection-hero{padding-top:65px;padding-bottom:55px}
+  .boys-page .collection-title{font-size:clamp(70px,18vw,112px)}
+  .boys-page .collection-art img{box-shadow:12px 12px 0 rgba(201,243,74,.12),0 20px 45px #0007}
+  .boys-page .art-sticker{width:88px;height:88px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.boys-page .art-sticker,.boys-page .collection-hero:after{animation:none}}
