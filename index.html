@@ -76,9 +76,33 @@ header{position:sticky;top:0;backdrop-filter:blur(18px);-webkit-backdrop-filter:
 @media(max-width:700px){.hero{display:flex;flex-direction:column;align-items:stretch;gap:34px;min-height:0;padding:58px 6% 45px}.hero-inner{max-width:none}.hero h1{font-size:clamp(62px,15vw,96px);margin:23px 0}.hero-visual{width:82%;max-width:390px;align-self:center;margin:0 0 5px 12px}.hero-photo{aspect-ratio:4/4.5}.floating-stamp{left:-28px;top:12%;width:82px;height:82px}.floating-stamp b{font-size:14px}.hero-caption{font-size:8px}.manifesto{padding:65px 6%}.manifesto-foot{gap:12px 20px;font-size:7px}.trust-strip{margin:0 4%;grid-template-columns:1fr;gap:15px;padding:20px 0}.trust-strip div{justify-content:flex-start}.trust-strip b{font-size:18px}#back-top{right:14px;bottom:14px}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero h1,.hero .eyebrow,.hero-copy,.hero-actions,.hero-note,.hero-visual{animation:none}}
 
-</style>
+
+/* CINEMATIC OPENING — inspired by the Sancta Maria intro */
+body.site-loading{overflow:hidden}
+.site-loader{position:fixed;inset:0;z-index:10000;background:#10110e;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;opacity:1;visibility:visible;transition:opacity .8s cubic-bezier(.76,0,.24,1),visibility .8s}
+.site-loader:before{content:"R";position:absolute;font-family:'Space Grotesk',sans-serif;font-size:min(85vw,1000px);font-weight:700;line-height:1;color:rgba(255,255,255,.018);pointer-events:none}
+.site-loader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-mark{position:relative;font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,7vw,66px);font-weight:700;letter-spacing:.24em;padding-left:.24em;color:#f5f4ec;animation:loaderWordIn 1s cubic-bezier(.16,1,.3,1) both}
+.loader-mark span{color:var(--lime)}
+.loader-tagline{position:relative;margin-top:13px;font-size:9px;font-weight:800;letter-spacing:.48em;padding-left:.48em;color:var(--muted);animation:loaderWordIn .9s .16s cubic-bezier(.16,1,.3,1) both}
+.loader-rule{position:relative;width:150px;height:1px;background:rgba(245,244,236,.16);margin-top:38px;overflow:hidden}
+.loader-rule span{display:block;width:100%;height:100%;background:var(--lime);transform:scaleX(0);transform-origin:left;animation:loaderProgress 1.35s .15s cubic-bezier(.65,0,.35,1) forwards}
+.loader-foot{position:absolute;left:6%;right:6%;bottom:28px;display:flex;justify-content:space-between;color:#77786d;font-size:8px;font-weight:700;letter-spacing:.2em}
+@keyframes loaderWordIn{from{opacity:0;transform:translateY(18px);filter:blur(7px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes loaderProgress{to{transform:scaleX(1)}}
+@media(max-width:600px){.loader-mark{font-size:39px;letter-spacing:.18em;padding-left:.18em}.loader-tagline{font-size:8px;letter-spacing:.34em;padding-left:.34em}.loader-foot{left:5%;right:5%;font-size:7px;letter-spacing:.12em}}
+@media(prefers-reduced-motion:reduce){.site-loader,.loader-mark,.loader-tagline,.loader-rule span{animation:none!important;transition:opacity .01ms,visibility .01ms!important}.loader-rule span{transform:scaleX(1)}}
+\n</style>
 </head>
-<body>
+<body class="site-loading">\n
+<!-- CINEMATIC OPENING LOADER -->
+<div class="site-loader" id="site-loader" role="status" aria-label="Loading RYVEO">
+  <div class="loader-mark">RYVEO<span>.</span></div>
+  <div class="loader-tagline">WEAR YOUR OWN VIBE</div>
+  <div class="loader-rule"><span></span></div>
+  <div class="loader-foot"><span>STREETWEAR / 2026</span><span>LOADING EXPERIENCE</span></div>
+</div>
+
 <div class="announcement">FRESH FITS. LOUD PERSONALITY. <span>✳</span> PAN-INDIA DELIVERY</div>
 <header><a class="logo" href="#top" aria-label="Ryveo home">RYVEO<em>.</em></a><nav class="nav"><a href="#top">Home</a><a href="#boys">Him / Boys</a><a href="#girls">Her / Girls</a><a href="#shop">All drops</a><a href="#custom">Custom prints</a><a class="nav-cta" href="#shop">Shop the drop ↗</a></nav></header>
 <section class="hero" id="top"><div class="orb" aria-hidden="true"></div><div class="hero-inner"><div class="eyebrow">Not made to blend in</div><h1>Wear your <span>own vibe.</span></h1><p class="hero-copy">Streetwear for your main-character era. Graphic tees, oversized energy and designs that say it before you do.</p><div class="hero-actions"><a class="btn btn-primary" href="#shop">Explore the drop <span>↘</span></a><a class="btn btn-secondary" href="https://www.instagram.com/ryveo.in/" target="_blank" rel="noopener noreferrer">Follow the vibe ↗</a></div><div class="hero-note">Designed for <b>your mood</b> · Styled by <b>you</b> · Delivered across India</div></div><div class="hero-visual" aria-label="RYVEO featured streetwear collection"><div class="hero-photo"><img src="black%20panther.jpg" alt="RYVEO graphic streetwear design" fetchpriority="high"><span class="photo-index">01 / THE ROTATION</span></div><div class="floating-stamp"><span>RYVEO</span><b>NOT<br>AVERAGE</b><small>EST. 2026</small></div><div class="hero-caption"><span>THE NEW UNIFORM</span><b>BUILT TO STAND OUT.</b></div></div></section>
@@ -169,4 +193,25 @@ document.getElementById("modal-order").addEventListener("click",()=>{if(activePr
  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",function(e){const target=document.querySelector(this.getAttribute("href"));if(target){e.preventDefault();target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}}));
 })();
 </script>
-</body></html>
+
+<script>
+/* RYVEO opening loader — fades away after the page finishes loading */
+(function(){
+  const loader=document.getElementById("site-loader");
+  if(!loader)return;
+  let started=false;
+  function finish(){
+    if(started)return;
+    started=true;
+    window.setTimeout(function(){
+      loader.classList.add("is-done");
+      loader.setAttribute("aria-hidden","true");
+      document.body.classList.remove("site-loading");
+    },650);
+  }
+  if(document.readyState==="complete")finish();
+  else window.addEventListener("load",finish,{once:true});
+  window.setTimeout(finish,5000);
+})();
+</script>
+\n</body></html>
