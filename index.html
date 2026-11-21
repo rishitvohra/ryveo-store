@@ -278,6 +278,40 @@ header{background:rgba(10,11,10,.88);backdrop-filter:blur(16px);border-bottom:1p
 }
 @media(max-width:390px){.nav{gap:9px;font-size:9px}.nav a:last-child{display:none}}
 
+
+/* FULL-PAGE GRAFFITI BACKDROP — visible doodles, not just hero decoration */
+.home-atmosphere{
+  opacity:1!important;
+  background-color:#0b0c0b!important;
+  background-image:
+    radial-gradient(ellipse at 8% 18%,rgba(201,243,74,.20),transparent 34%),
+    radial-gradient(ellipse at 92% 34%,rgba(215,138,169,.19),transparent 36%),
+    radial-gradient(ellipse at 45% 88%,rgba(201,243,74,.10),transparent 40%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23c9f34a' stroke-opacity='.38' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M68 72l9 22 22 9-22 9-9 22-9-22-22-9 22-9zM392 58l4 16 16 4-16 4-4 16-4-16-16-4 16-4zM82 355l28-28m-28 0l28 28M426 350l18 18m-18 0l18-18M270 52l-12 34h20l-12 35 39-48h-23l12-21zM170 420q28-24 56 0t56 0'/%3E%3Cpath d='M350 195c-18-22-43 5 0 35 43-30 18-57 0-35zM80 190h46m-23-23v46M380 440l25-25m-25 0l25 25' stroke-dasharray='5 7'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d78aa9' stroke-opacity='.52' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M235 245c-25-30-60 8 0 48 60-40 25-78 0-48zM470 190q-25-25-50 0 25 25 50 0zM455 190l-17-24m17 24l17-24M170 90l4 14 14 4-14 4-4 14-4-14-14-4 14-4zM300 430l20-20m-20 0l20 20'/%3E%3Cpath d='M50 455q18-24 36 0t36 0M300 160q14-22 28 0t28 0' stroke-dasharray='4 7'/%3E%3C/g%3E%3Cg fill='%23c9f34a' fill-opacity='.56' font-family='Arial,sans-serif' font-size='13' font-weight='bold' letter-spacing='3'%3E%3Ctext x='285' y='305' transform='rotate(-12 285 305)'%3ENO RULES%3C/text%3E%3Ctext x='28' y='285' transform='rotate(10 28 285)'%3ERYVEO%3C/text%3E%3C/g%3E%3Cg fill='%23d78aa9' fill-opacity='.62' font-family='Arial,sans-serif' font-size='12' font-style='italic'%3E%3Ctext x='355' y='115' transform='rotate(12 355 115)'%3Exoxo%3C/text%3E%3Ctext x='150' y='495' transform='rotate(-8 150 495)'%3Epretty chaos%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size:auto,auto,auto,520px 520px;
+  background-repeat:no-repeat,no-repeat,no-repeat,repeat;
+  mask-image:none!important;
+}
+.home-atmosphere:before{
+  width:min(64vw,820px);right:-20%;top:9%;
+  border:1px solid rgba(201,243,74,.22);
+  box-shadow:inset 0 0 0 30px rgba(201,243,74,.025),inset 0 0 0 82px rgba(201,243,74,.02),0 0 110px rgba(201,243,74,.055);
+}
+.home-atmosphere:after{
+  content:"YOUR VIBE / NO RULES / RYVEO";
+  right:-.15em;top:58%;font-size:clamp(48px,9vw,132px);
+  color:rgba(215,138,169,.085);letter-spacing:.09em;
+}
+.hero,.shop-doorway,main,.manifesto,.trust-strip,footer{background-color:transparent}
+.hero{background-image:radial-gradient(ellipse at 80% 45%,rgba(201,243,74,.10),transparent 35%),radial-gradient(ellipse at 12% 92%,rgba(215,138,169,.09),transparent 32%)}
+.shop-doorway{background:transparent!important}
+.category-section:before{border-color:rgba(201,243,74,.18);box-shadow:0 0 0 24px rgba(201,243,74,.025),0 0 0 48px rgba(215,138,169,.025)}
+@media(max-width:700px){
+ .home-atmosphere{background-size:auto,auto,auto,360px 360px}
+ .home-atmosphere:before{width:105vw;right:-55%;top:18%}
+ .home-atmosphere:after{font-size:54px;top:61%}
+}
+
 </style>
 <link rel="stylesheet" href="store.css">
 </head>
