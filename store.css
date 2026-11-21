@@ -106,3 +106,12 @@ body.ryveo-page{animation:ryveoCheckoutEnter .72s cubic-bezier(.16,1,.3,1) both}
 .ryveo-coupon-celebration.is-closing .ryveo-coupon-pop{opacity:0;transform:translateY(18px) scale(.94)}
 .ryveo-coupon-celebration.is-closing .ryveo-coupon-confetti{opacity:0;transition:opacity .25s ease}
 @media(prefers-reduced-motion:reduce){.ryveo-cart-row,#ryveo-apply-coupon,.ryveo-remove,.ryveo-coupon-message,.ryveo-coupon-celebration,.ryveo-coupon-pop,.ryveo-coupon-confetti{transition:none!important;animation:none!important}}
+
+/* Full-screen item-added celebration */
+.ryveo-cart-added .ryveo-coupon-pop>strong{max-width:100%;white-space:normal;line-height:1.5;overflow-wrap:anywhere}
+.ryveo-cart-added-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.ryveo-cart-added-actions button{min-width:132px;transition:transform .22s ease,background .22s ease,box-shadow .22s ease}
+.ryveo-cart-added-actions button:hover{transform:translateY(-2px);box-shadow:0 8px 22px #0005}
+.ryveo-cart-added-actions .ryveo-cart-continue{background:transparent;color:#d6ff3f;border:1px solid #d6ff3f}
+@media(max-width:420px){.ryveo-cart-added .ryveo-coupon-pop{padding:30px 18px 24px}.ryveo-cart-added-actions{flex-direction:column}.ryveo-cart-added-actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){.ryveo-cart-added-actions button{transition:none!important}}
