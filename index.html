@@ -156,8 +156,7 @@ products.forEach((p,i)=>{
  const size=document.createElement("select");size.setAttribute("aria-label","Choose size for "+p.name);p.sizes.forEach(s=>size.add(new Option("Size: "+s,s)));
  const quantity=document.createElement("select");quantity.setAttribute("aria-label","Choose quantity for "+p.name);for(let n=1;n<=5;n++)quantity.add(new Option("Quantity: "+n,String(n)));
  const button=document.createElement("button");button.className="order";button.textContent="ORDER ON WHATSAPP ↗";
- button.addEventListener("click",()=>{if(!/^91\d{10}$/.test(WHATSAPP_NUMBER)){alert("Please set your correct Indian WhatsApp number in the website code first.");return;}const qty=Number(quantity.value),total=p.price*qty;const message=["Hi Ryveo! I'd like to place an order.","","Product: "+p.name,"Price per item: Rs. "+p.price,"Quantity: "+qty,"Total product price: Rs. "+total,"Colour: "+colour.value,"Size: "+size.value,"","Please confirm availability and delivery charges."].join("
-");window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");});
+ button.addEventListener("click",()=>{if(!/^91\d{10}$/.test(WHATSAPP_NUMBER)){alert("Please set your correct Indian WhatsApp number in the website code first.");return;}const qty=Number(quantity.value),total=p.price*qty;const message=["Hi Ryveo! I'd like to place an order.","","Product: "+p.name,"Price per item: Rs. "+p.price,"Quantity: "+qty,"Total product price: Rs. "+total,"Colour: "+colour.value,"Size: "+size.value,"","Please confirm availability and delivery charges."].join("\n");window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");});
  info.append(title,description,priceRow,colour,size,quantity,button);card.append(wrap,info);container.append(card);
   const categoryGrid=document.getElementById(p.category+"-products");if(categoryGrid)categoryGrid.append(card.cloneNode(true));
 });
@@ -176,8 +175,7 @@ products.forEach((p,i)=>{
 });
 function sendOrder(p,colour,size,qty){
  if(!/^91\d{10}$/.test(WHATSAPP_NUMBER)){alert("Please set your correct Indian WhatsApp number in the website code first.");return;}
- const total=p.price*qty;const message=["Hi Ryveo! I'd like to place an order.","","Product: "+p.name,"Price per item: Rs. "+p.price,"Quantity: "+qty,"Total product price: Rs. "+total,"Colour: "+colour,"Size: "+size,"","Please confirm availability and delivery charges."].join("
-");
+ const total=p.price*qty;const message=["Hi Ryveo! I'd like to place an order.","","Product: "+p.name,"Price per item: Rs. "+p.price,"Quantity: "+qty,"Total product price: Rs. "+total,"Colour: "+colour,"Size: "+size,"","Please confirm availability and delivery charges."].join("\n");
  window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
 }
 const modal=document.getElementById("product-modal"),modalImage=document.getElementById("modal-image"),modalTitle=document.getElementById("modal-title"),modalDescription=document.getElementById("modal-description"),modalPrice=document.getElementById("modal-price"),modalColour=document.getElementById("modal-colour"),modalSize=document.getElementById("modal-size"),modalQuantity=document.getElementById("modal-quantity");let activeProduct=null;
