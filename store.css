@@ -136,3 +136,46 @@ body.ryveo-page{animation:ryveoCheckoutEnter .72s cubic-bezier(.16,1,.3,1) both}
 .ryveo-cart-added .ryveo-coupon-pop>p:not(.ryveo-coupon-eyebrow){font-size:14px}
 @keyframes ryveoAddedPop{0%{opacity:0;filter:blur(14px);transform:translateY(90px) scale(.55) rotate(-5deg)}52%{opacity:1;filter:blur(0);transform:translateY(-14px) scale(1.06) rotate(1deg)}72%{transform:translateY(5px) scale(.98) rotate(0)}100%{opacity:1;transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){.ryveo-coupon-pop:before,.ryveo-coupon-pop:after,.ryveo-coupon-check{animation:none!important}}
+
+
+/* Dynamic checkout/cart mood: boys, girls, or a split RYVEO blend */
+body.ryveo-theme-boys{--bg:#10110e;--text:#f5f4ec;--soft:#a8a99d;--edge:rgba(245,244,236,.16);--card:#191b16;--accent:#d6ff3f;background:var(--bg);color:var(--text)}
+body.ryveo-theme-girls{--bg:#fff0f4;--text:#241823;--soft:#756574;--edge:rgba(50,25,45,.16);--card:#fff9fb;--accent:#ff4f86;background:radial-gradient(ellipse at 85% 8%,rgba(255,79,134,.14),transparent 35%),radial-gradient(ellipse at 8% 90%,rgba(198,177,255,.2),transparent 34%),var(--bg);color:var(--text)}
+body.ryveo-theme-girls .collection-header{background:rgba(255,240,244,.9);border-color:rgba(50,25,45,.14)}
+body.ryveo-theme-girls .collection-logo{font-family:'Outfit';font-weight:900;letter-spacing:2px}
+body.ryveo-theme-girls .collection-logo span{color:#ff4f86}
+body.ryveo-theme-girls .ryveo-summary,body.ryveo-theme-girls .ryveo-checkout-card,body.ryveo-theme-girls .ryveo-note{background:#fff9fb;border-color:#f4cbd9;color:#241823}
+body.ryveo-theme-girls .ryveo-muted,body.ryveo-theme-girls .ryveo-summary-line{color:#756574}
+body.ryveo-theme-girls .ryveo-btn,body.ryveo-theme-girls #ryveo-apply-coupon{background:#ff4f86;border-color:#ff4f86;color:#fff}
+body.ryveo-theme-girls .ryveo-coupon-entry input,body.ryveo-theme-girls .ryveo-field input,body.ryveo-theme-girls .ryveo-field textarea{background:#fff;border-color:#edc5d4;color:#241823}
+body.ryveo-theme-mixed{--bg:#11120f;--text:#f7f5ef;--soft:#b9b7b4;--edge:rgba(255,255,255,.17);--card:#191a17;--accent:#d6ff3f;background:linear-gradient(112deg,#10110e 0%,#10110e 49.8%,#fff0f4 50.2%,#fff0f4 100%);color:#f7f5ef}
+body.ryveo-theme-mixed .collection-header{background:linear-gradient(90deg,rgba(16,17,14,.94) 0 50%,rgba(255,240,244,.94) 50% 100%);border-color:#8885}
+body.ryveo-theme-mixed .collection-logo span{color:#ff4f86}
+body.ryveo-theme-mixed .ryveo-shell{position:relative}
+body.ryveo-theme-mixed .ryveo-shell:before{content:"";position:fixed;inset:82px 50% 0 auto;width:1px;background:linear-gradient(transparent,#ff4f86aa,#d6ff3faa,transparent);pointer-events:none}
+body.ryveo-theme-mixed .ryveo-summary,body.ryveo-theme-mixed .ryveo-checkout-card{background:linear-gradient(135deg,#191a17 0 50%,#fff9fb 50% 100%);border:1px solid #aaa7;color:#f7f5ef}
+body.ryveo-theme-mixed .ryveo-checkout-card{background:linear-gradient(110deg,#191a17 0 50%,#fff9fb 50% 100%)}
+body.ryveo-theme-mixed .ryveo-summary-title,body.ryveo-theme-mixed .ryveo-summary-line,body.ryveo-theme-mixed .ryveo-checkout-card h2,body.ryveo-theme-mixed .ryveo-checkout-item,body.ryveo-theme-mixed .ryveo-checkout-total-line{color:inherit}
+body.ryveo-theme-mixed .ryveo-checkout-item:nth-child(even),body.ryveo-theme-mixed .ryveo-checkout-total-line{color:#29202a}
+body.ryveo-theme-mixed .ryveo-muted{color:#d4d2c9}
+body.ryveo-theme-mixed .ryveo-btn{background:linear-gradient(100deg,#d6ff3f 0 50%,#ff4f86 50% 100%);color:#171717;border:0}
+body.ryveo-theme-mixed .ryveo-coupon-entry input,body.ryveo-theme-mixed .ryveo-field input,body.ryveo-theme-mixed .ryveo-field textarea{background:#fff;color:#241823;border-color:#ffb8ce}
+body.ryveo-theme-mixed .ryveo-field label{color:#f7f5ef}
+body.ryveo-theme-mixed .ryveo-summary .ryveo-coupon-hint,body.ryveo-theme-mixed .ryveo-summary .ryveo-coupon-message{color:#e4e1d9}
+.ryveo-sad-celebration{position:fixed;inset:0;z-index:11000;display:grid;place-items:center;overflow:hidden;padding:20px;background:rgba(12,10,15,.91);backdrop-filter:blur(10px);animation:ryveoSadOverlay .3s ease both}
+.ryveo-sad-rain{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ryveo-sad-rain span{position:absolute;left:var(--x);top:-12vh;font-size:var(--size);opacity:0;filter:drop-shadow(0 5px 8px #0005);animation:ryveoSadDrop var(--duration) cubic-bezier(.2,.65,.35,1) var(--delay) both}
+.ryveo-sad-card{position:relative;z-index:2;width:min(430px,100%);padding:38px 25px 30px;text-align:center;background:linear-gradient(145deg,#29212b,#17151b);border:1px solid #b99ac8;box-shadow:0 0 0 8px #b99ac81a,0 25px 100px #000c;animation:ryveoSadPop .72s cubic-bezier(.16,1,.3,1) both}
+.ryveo-sad-face{font-size:64px;line-height:1;filter:drop-shadow(0 0 18px #b99ac855);animation:ryveoSadWobble 1.2s ease-in-out infinite}
+.ryveo-sad-card>p{font-size:10px;letter-spacing:4px;color:#c9a9d5;font-weight:900;margin:20px 0 8px}
+.ryveo-sad-card h2{font:900 clamp(27px,7vw,39px)/1 'Space Grotesk';letter-spacing:-1.5px;color:#fff;margin:0 0 12px}
+.ryveo-sad-card>span{display:block;color:#d4c9d8;font-size:13px;margin-bottom:24px}
+.ryveo-sad-card button{border:1px solid #c9a9d5;background:#c9a9d5;color:#211925;padding:13px 18px;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer}
+@keyframes ryveoSadOverlay{from{opacity:0}to{opacity:1}}
+@keyframes ryveoSadPop{0%{opacity:0;transform:translateY(60px) scale(.7) rotate(-3deg)}65%{opacity:1;transform:translateY(-8px) scale(1.03)}100%{opacity:1;transform:none}}
+@keyframes ryveoSadDrop{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(-25deg)}12%{opacity:.95}100%{opacity:.2;transform:translate3d(var(--drift),115vh,0) rotate(360deg)}}
+@keyframes ryveoSadWobble{0%,100%{transform:rotate(-5deg) scale(1)}50%{transform:rotate(5deg) scale(1.08)}}
+.ryveo-sad-celebration.is-closing{opacity:0;transition:opacity .4s ease}
+.ryveo-sad-celebration.is-closing .ryveo-sad-card{transform:translateY(20px) scale(.94);opacity:0;transition:all .3s ease}
+@media(max-width:600px){body.ryveo-theme-mixed{background:linear-gradient(155deg,#10110e 0%,#10110e 49.8%,#fff0f4 50.2%,#fff0f4 100%)}}
+@media(prefers-reduced-motion:reduce){.ryveo-sad-rain span,.ryveo-sad-face,.ryveo-sad-card,.ryveo-sad-celebration{animation:none!important;transition:none!important}}
