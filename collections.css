@@ -43,8 +43,8 @@
 .girls-page{--bg:#fff0f4;--text:#241823;--soft:#756574;--edge:rgba(50,25,45,.16);--card:#fff9fb;--image-bg:#f7dce7;--select-bg:#fff;--accent:#ff4f86;--button-ink:#fff;--art-shadow:rgba(255,79,134,.18);background:var(--bg);color:var(--text)}
 .boys-page .collection-header{background:rgba(16,17,14,.84)}
 .girls-page .collection-header{background:rgba(255,240,244,.88)}
-.boys-page .collection-hero{background:radial-gradient(ellipse at 85% 30%,rgba(214,255,63,.12),transparent 34%),var(--bg)}
-.girls-page .collection-hero{background:radial-gradient(ellipse at 85% 22%,rgba(255,79,134,.15),transparent 34%),radial-gradient(ellipse at 5% 85%,rgba(198,177,255,.23),transparent 32%),var(--bg)}
+.boys-page .collection-hero{background:radial-gradient(ellipse at 85% 30%,rgba(214,255,63,.12),transparent 34%)}
+.girls-page .collection-hero{background:radial-gradient(ellipse at 85% 22%,rgba(255,79,134,.15),transparent 34%),radial-gradient(ellipse at 5% 85%,rgba(198,177,255,.23),transparent 32%)}
 .girls-page .collection-logo{font-family:'Outfit';font-weight:900;letter-spacing:2px}.girls-page .collection-logo span{color:var(--accent)}
 .girls-page .collection-kicker{color:#db3f76}
 .girls-page .collection-title{font-family:'Outfit';font-weight:900;letter-spacing:-.09em}
@@ -96,7 +96,7 @@ body.ryveo-page-leaving{animation:ryveoPageLeave .2s ease-in both;pointer-events
 /* FULL-PAGE COLLECTION ART — subtle texture behind all content */
 body.boys-page,body.girls-page{position:relative;isolation:isolate}
 body.boys-page:before,body.girls-page:before{
-  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
   background-repeat:repeat;background-size:320px 320px;opacity:.42;
 }
 body.boys-page:before{
@@ -106,14 +106,15 @@ body.girls-page:before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23e56b9a' stroke-opacity='.38' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M48 62c-17-18-34 7 0 29 34-22 17-47 0-29zm0 0v29M278 48l3 10 10 3-10 3-3 10-3-10-10-3 10-3zM90 250l3 9 9 3-9 3-3 9-3-9-9-3 9-3zM285 245c-15-17-31 5 0 25 31-20 15-42 0-25z'/%3E%3Cpath d='M175 120c-10-15-30-4-20 12l20 19 20-19c10-16-10-27-20-12zM35 300q14-18 28 0t28 0M250 320q14-18 28 0t28 0' stroke-dasharray='3 6'/%3E%3C/g%3E%3Cg fill='%23a78bdc' fill-opacity='.25' font-family='Arial,sans-serif' font-size='13' font-style='italic'%3E%3Ctext x='205' y='150' transform='rotate(9 205 150)'%3Exoxo%3C/text%3E%3Ctext x='18' y='190' transform='rotate(-10 18 190)'%3Epretty things%3C/text%3E%3C/g%3E%3C/svg%3E");
 }
 body.boys-page:after,body.girls-page:after{
-  position:fixed;right:-.06em;top:43%;z-index:0;pointer-events:none;
+  position:fixed;right:-.06em;top:43%;z-index:1;pointer-events:none;
   font-family:'Space Grotesk',sans-serif;font-size:clamp(100px,20vw,300px);
   font-weight:700;line-height:.8;letter-spacing:-.1em;white-space:nowrap;
   opacity:.075;transform:rotate(-90deg) translateX(20%);transform-origin:right center;
 }
 body.boys-page:after{content:"OFF GRID";color:#d6ff3f}
 body.girls-page:after{content:"IT GIRL";color:#d83b73;font-family:'Outfit',sans-serif}
-body.boys-page>main,body.girls-page>main,body.boys-page>.collection-header,body.girls-page>.collection-header,body.boys-page>.collection-footer,body.girls-page>.collection-footer{position:relative;z-index:1}
+body.boys-page>main,body.girls-page>main,body.boys-page>.collection-footer,body.girls-page>.collection-footer{position:relative;z-index:2}
+body.boys-page>.collection-header,body.girls-page>.collection-header{position:relative;z-index:20}
 body.boys-page>main,body.girls-page>main{background:transparent}
 body.boys-page>main>*,body.girls-page>main>*{position:relative;z-index:1}
 @media(max-width:700px){
