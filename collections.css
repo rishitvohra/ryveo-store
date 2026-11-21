@@ -226,3 +226,34 @@ body.boys-page>main>*,body.girls-page>main>*{position:relative;z-index:1}
   .boys-page .art-sticker{width:88px;height:88px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.boys-page .art-sticker,.boys-page .collection-hero:after{animation:none}}
+
+
+/* MEN PAGE VISIBILITY FIX — unmistakable OFF-GRID graffiti layer */
+html:has(body.boys-page){background:#090a08}
+body.boys-page{
+  background-color:#090a08!important;
+  background-image:
+    radial-gradient(ellipse at 8% 16%,rgba(201,243,74,.2),transparent 28%),
+    radial-gradient(ellipse at 92% 62%,rgba(201,243,74,.15),transparent 32%),
+    repeating-linear-gradient(135deg,rgba(201,243,74,.018) 0 1px,transparent 1px 9px),
+    linear-gradient(180deg,#080907 0%,#11140d 48%,#080907 100%)!important;
+  background-attachment:fixed!important;
+}
+body.boys-page:before{
+  opacity:.88!important;
+  background-size:260px 260px!important;
+  mix-blend-mode:screen;
+}
+body.boys-page:after{opacity:.13!important}
+body.boys-page .collection-hero{
+  background:
+    radial-gradient(ellipse at 78% 35%,rgba(201,243,74,.2),transparent 38%),
+    linear-gradient(110deg,rgba(8,9,7,.94),rgba(8,9,7,.52))!important;
+}
+body.boys-page .collection-products,
+body.boys-page .collection-custom{
+  background-color:rgba(9,10,8,.72)!important;
+  backdrop-filter:blur(2px);
+}
+body.boys-page .collection-header{background:rgba(8,9,7,.96)!important}
+body.boys-page .collection-marquee{background:#c9f34a!important;color:#090a08!important}
