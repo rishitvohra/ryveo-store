@@ -6,7 +6,7 @@
 <meta name="description" content="Shop oversized tees, graphic T-shirts and streetwear from Ryveo. Pan-India delivery. Order via WhatsApp.">
 <meta name="theme-color" content="#10110e">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#10110e;--panel:#191a16;--panel2:#20211b;--ink:#f5f4ec;--muted:#aaa99d;--lime:#d6ff3f;--line:rgba(245,244,236,.13);--pink:#ff6f9f}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
@@ -180,6 +180,104 @@ body> :not(.home-atmosphere){position:relative;z-index:1}
   .home-atmosphere{background-size:auto,auto,auto,48px 48px,48px 48px}
 }
 
+
+/* RYVEO GRAFFITI EDITORIAL — signature homepage art direction */
+:root{--graffiti-lime:#c9f34a;--graffiti-pink:#d78aa9}
+body{background:#0c0d0c}
+.announcement{background:#0c0d0c;color:#e9e8e0;border-bottom:1px solid rgba(255,255,255,.12);font-size:10px;letter-spacing:1.8px}
+.announcement span{color:var(--graffiti-lime)}
+header{background:rgba(10,11,10,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.14)}
+.logo{font-size:31px;letter-spacing:2px;font-style:italic}
+.logo em{color:var(--graffiti-lime)}
+.nav{gap:clamp(13px,2.2vw,29px)}
+.nav a{position:relative}
+.nav a:first-child:after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:var(--graffiti-lime)}
+.hero{
+ min-height:610px;padding:76px 7% 68px;gap:24px;isolation:isolate;
+ background:
+  radial-gradient(ellipse at 2% 56%,rgba(201,243,74,.18),transparent 34%),
+  radial-gradient(ellipse at 96% 30%,rgba(215,138,169,.16),transparent 34%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 5px),
+  #0c0d0c;
+}
+.hero:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.34;
+ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.28'/%3E%3C/svg%3E");
+}
+.hero:after{content:"✳";right:4%;top:7%;font:400 clamp(130px,24vw,330px)/1 'Permanent Marker';color:rgba(215,138,169,.13);transform:rotate(17deg)}
+.hero-inner{max-width:650px;z-index:3}
+.eyebrow{color:#e6e5dc;letter-spacing:5px}
+.eyebrow:before{background:var(--graffiti-lime);height:3px}
+.hero h1.graffiti-wordmark{
+ font:400 clamp(82px,13vw,176px)/.88 'Permanent Marker',cursive;
+ letter-spacing:-.065em;margin:22px 0 16px;color:#f0eee7;
+ text-shadow:4px 5px 0 rgba(255,255,255,.06),-2px 2px 0 rgba(0,0,0,.4);
+ transform:rotate(-3deg);transform-origin:left center;
+}
+.hero h1.graffiti-wordmark span{
+ display:block;margin:22px 0 0 12px;color:var(--graffiti-lime);
+ font:700 clamp(10px,1.3vw,15px)/1.4 'DM Sans',sans-serif;
+ letter-spacing:clamp(3px,.7vw,8px);transform:rotate(3deg);
+}
+.hero-copy{max-width:390px;color:#c9c7c0;font-size:14px}
+.hero-actions{margin-top:24px}
+.btn-primary{background:var(--graffiti-lime);border-radius:999px;color:#111}
+.btn-secondary{border-radius:999px;border-color:rgba(255,255,255,.3)}
+.hero-note{margin-top:28px;color:#aaa99d}
+.hero-visual{z-index:2;max-width:420px}
+.hero-photo{border:1px solid rgba(255,255,255,.22);box-shadow:12px 14px 0 rgba(215,138,169,.13);transform:rotate(2deg)}
+.hero-photo img{filter:grayscale(.25) contrast(1.08)}
+.floating-stamp{background:var(--graffiti-lime);color:#111;transform:rotate(8deg)}
+.orb{display:none}
+.shop-doorway{position:relative;isolation:isolate;background:#10110f;overflow:hidden}
+.shop-doorway:before{content:"↗";position:absolute;top:4%;left:2%;font:400 clamp(90px,18vw,230px)/1 'Permanent Marker';color:rgba(201,243,74,.10);transform:rotate(-18deg);pointer-events:none}
+.doorway-head h2{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:-.035em}
+.doorway-head h2 em{color:var(--graffiti-lime)}
+.doorway-grid{position:relative;z-index:1;gap:20px}
+.doorway-card{
+ min-height:350px;padding:30px;border-radius:18px;isolation:isolate;
+ background-size:cover;background-position:center;
+ box-shadow:0 18px 50px rgba(0,0,0,.25);
+}
+.doorway-boys{
+ background-image:linear-gradient(90deg,rgba(8,9,8,.9),rgba(8,9,8,.48) 58%,rgba(8,9,8,.15)),url("black%20panther.jpg");
+}
+.doorway-girls{
+ background-image:linear-gradient(90deg,rgba(55,27,43,.76),rgba(55,27,43,.32) 58%,rgba(55,27,43,.1)),url("f86f3dd5-e6bc-43a2-ae7d-e9b7ec0ff237.jpg");
+}
+.doorway-card:after{inset:12px;border:1px solid rgba(255,255,255,.3);border-radius:11px;z-index:-1}
+.doorway-card strong{font:italic 900 clamp(48px,6vw,82px)/.82 'Space Grotesk',sans-serif;letter-spacing:-.09em;text-shadow:0 3px 18px rgba(0,0,0,.45)}
+.doorway-boys strong span{color:var(--graffiti-lime)}
+.doorway-girls strong span{color:#f2a9c7}
+.doorway-card b{display:inline-flex;align-self:flex-start;padding:12px 17px;border-radius:999px;background:var(--graffiti-lime);color:#111}
+.doorway-girls b{background:#e5a3bf;color:#24121c}
+.doorway-index,.doorway-card small{color:#f0eee7;text-shadow:0 2px 10px #000}
+.manifesto{background:linear-gradient(110deg,#11120f,#171019 55%,#11120f)}
+.manifesto p span{color:var(--graffiti-lime)}
+.ticker{background:var(--graffiti-lime);color:#111}
+.custom-banner{border-radius:18px;background:radial-gradient(ellipse at 95% 10%,rgba(215,138,169,.22),transparent 38%),#171715}
+.custom-banner .btn{border-radius:999px}
+.product{border-radius:12px;background:#171815}
+.image-wrap{border-radius:7px}
+.product-tag,.order{background:var(--graffiti-lime)}
+.home-atmosphere{opacity:.45}
+@media(max-width:900px){
+ .hero{gap:12px;padding-left:6%;padding-right:6%}
+ .hero-visual{max-width:340px}
+}
+@media(max-width:700px){
+ .hero{min-height:auto;padding:68px 6% 48px;display:block}
+ .hero h1.graffiti-wordmark{font-size:clamp(76px,22vw,132px);margin-top:28px}
+ .hero-visual{margin:45px auto 10px;max-width:min(78%,340px)}
+ .doorway-card{min-height:310px}
+ .doorway-boys{background-position:58% center}
+ .doorway-girls{background-position:60% center}
+ .nav{gap:13px;font-size:10px}
+ header{padding:0 4%;height:72px}
+ .logo{font-size:25px}
+}
+@media(max-width:390px){.nav{gap:9px;font-size:9px}.nav a:last-child{display:none}}
+
 </style>
 <link rel="stylesheet" href="store.css">
 </head>
@@ -196,7 +294,7 @@ body> :not(.home-atmosphere){position:relative;z-index:1}
 
 <div class="announcement">FRESH FITS. LOUD PERSONALITY. <span>✳</span> PAN-INDIA DELIVERY</div>
 <header><a class="logo" href="#top" aria-label="RYVEO.IN home">RYVEO<em>.</em></a><nav class="nav"><a href="#top">Home</a><a href="boys.html">Men</a><a href="girls.html">Women</a><a href="#all-drops">Shop all</a><a href="custom-print.html">Custom prints</a></nav></header>
-<section class="hero" id="top"><div class="orb" aria-hidden="true"></div><div class="hero-inner"><div class="eyebrow">Not made to blend in</div><h1>Wear your <span>own vibe.</span></h1><p class="hero-copy">Streetwear for your main-character era. Graphic tees, oversized energy and designs that say it before you do.</p><div class="hero-actions"><a class="btn btn-primary" href="boys.html">Shop Men <span>↗</span></a><a class="btn btn-secondary" href="girls.html">Shop Women <span>↗</span></a></div><div class="hero-note">Designed for <b>your mood</b> · Styled by <b>you</b> · Delivered across India</div></div><div class="hero-visual" aria-label="RYVEO featured streetwear collection"><div class="hero-photo"><img src="black%20panther.jpg" alt="RYVEO graphic streetwear design" fetchpriority="high"><span class="photo-index">01 / THE ROTATION</span></div><div class="floating-stamp"><span>RYVEO</span><b>NOT<br>AVERAGE</b><small>EST. 2026</small></div><div class="hero-caption"><span>THE NEW UNIFORM</span><b>BUILT TO STAND OUT.</b></div></div></section>
+<section class="hero" id="top"><div class="orb" aria-hidden="true"></div><div class="hero-inner"><div class="eyebrow">Not made to blend in</div><h1 class="graffiti-wordmark">RYVEO<span>WEAR YOUR OWN VIBE</span></h1><p class="hero-copy">Streetwear for your main-character era. Graphic tees, oversized energy and designs that say it before you do.</p><div class="hero-actions"><a class="btn btn-primary" href="boys.html">Shop Men <span>↗</span></a><a class="btn btn-secondary" href="girls.html">Shop Women <span>↗</span></a></div><div class="hero-note">Designed for <b>your mood</b> · Styled by <b>you</b> · Delivered across India</div></div><div class="hero-visual" aria-label="RYVEO featured streetwear collection"><div class="hero-photo"><img src="black%20panther.jpg" alt="RYVEO graphic streetwear design" fetchpriority="high"><span class="photo-index">01 / THE ROTATION</span></div><div class="floating-stamp"><span>RYVEO</span><b>NOT<br>AVERAGE</b><small>EST. 2026</small></div><div class="hero-caption"><span>THE NEW UNIFORM</span><b>BUILT TO STAND OUT.</b></div></div></section>
 
 <section class="shop-doorway reveal" id="choose-your-vibe">
   <div class="doorway-head"><span class="kicker">TWO SIDES. ONE ATTITUDE.</span><h2>CHOOSE YOUR <em>ENERGY.</em></h2></div>
