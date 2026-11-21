@@ -4,7 +4,7 @@ const category=document.body.dataset.collection;
 const grid=document.getElementById("collection-grid");
 const money=n=>"₹"+n.toLocaleString("en-IN");
 function order(p,colour,size,qty){
- const lines=["Hi RYVEO! I'd like to place an order.","","Product: "+p.name,"Price per item: Rs. "+p.price,"Quantity: "+qty,"Total product price: Rs. "+(p.price*qty),"Colour: "+colour,"Size: "+size,"",p.name==="custom print baby"?"I'd like to discuss my custom print idea.":"Please confirm availability and delivery charges."];
+ const lines=["Hi RYVEO! I'd like to place an order.","","Product: "+p.name,"Price per item: Rs. "+p.price,"Quantity: "+qty,"Total product price: Rs. "+(p.price*qty),"Colour: "+colour,"Size: "+size,"",p.slug==="custom-print-baby"?"I'd like to discuss my custom print idea.":"Please confirm availability and delivery charges."];
  window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(lines.join("\n")),"_blank","noopener,noreferrer");
 }
 function render(){
