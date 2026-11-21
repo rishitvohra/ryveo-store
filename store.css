@@ -1,0 +1,43 @@
+/* RYVEO 3.0 — shopping layer */
+.ryveo-cart-link{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--accent,var(--lime,#d6ff3f));padding:9px 12px;font-weight:900;font-size:10px;letter-spacing:1px;white-space:nowrap}
+.ryveo-cart-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:50%;background:var(--accent,var(--lime,#d6ff3f));color:var(--button-ink,#111);font-size:10px}
+.ryveo-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+.ryveo-tools input,.ryveo-tools select{min-height:42px;padding:10px 12px;border:1px solid #444;background:#151610;color:#f5f4ec;min-width:145px;flex:1}
+.girls-page .ryveo-tools input,.girls-page .ryveo-tools select{background:#fff;color:#241823;border-color:#f1cada}
+.ryveo-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.ryveo-card-actions a,.ryveo-card-actions button{display:flex;align-items:center;justify-content:center;min-height:39px;padding:9px 6px;border:1px solid var(--accent,var(--lime,#d6ff3f));background:transparent;color:inherit;font-size:9px;font-weight:900;letter-spacing:.5px;cursor:pointer;text-align:center}
+.ryveo-card-actions button{background:var(--accent,var(--lime,#d6ff3f));color:var(--button-ink,#111)}
+.girls-page .ryveo-card-actions a,.girls-page .ryveo-card-actions button{border-radius:999px}
+.ryveo-page{min-height:100vh;background:#10110e;color:#f5f4ec}
+.ryveo-shell{width:min(1160px,92%);margin:0 auto;padding:42px 0 80px}
+.ryveo-breadcrumb{font-size:10px;letter-spacing:1.5px;color:#aaa99d;margin-bottom:24px;text-transform:uppercase}
+.ryveo-product-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:clamp(25px,5vw,70px);align-items:start}
+.ryveo-product-photo{width:100%;aspect-ratio:4/5;object-fit:contain;background:#1b1c17;border:1px solid #34352b}
+.ryveo-product-copy h1{font:700 clamp(34px,5vw,62px)/.95 'Space Grotesk',sans-serif;letter-spacing:-.06em;margin:12px 0}
+.ryveo-price{font-size:27px;font-weight:900;color:#d6ff3f;margin:18px 0}
+.ryveo-muted{color:#aaa99d;line-height:1.75;font-size:13px}
+.ryveo-field{display:grid;gap:8px;margin:16px 0}
+.ryveo-field label{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#b9b9ad;font-weight:800}
+.ryveo-field select,.ryveo-field input,.ryveo-field textarea{width:100%;padding:13px;background:#151610;border:1px solid #444;color:#f5f4ec;font:inherit}
+.ryveo-action{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ryveo-btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 18px;background:#d6ff3f;color:#10110e;border:1px solid #d6ff3f;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.ryveo-btn.secondary{background:transparent;color:#f5f4ec;border-color:#5a5b4f}
+.ryveo-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.ryveo-info-grid div{padding:14px;border:1px solid #34352b;font-size:10px;color:#aaa99d;line-height:1.6}
+.ryveo-info-grid b{display:block;color:#f5f4ec;font-size:11px;margin-bottom:5px}
+.ryveo-table{width:100%;border-collapse:collapse;margin-top:15px;font-size:12px}
+.ryveo-table th,.ryveo-table td{padding:11px;border-bottom:1px solid #34352b;text-align:left}
+.ryveo-cart-list{display:grid;gap:12px;margin:24px 0}
+.ryveo-cart-row{display:grid;grid-template-columns:92px 1fr auto;gap:15px;align-items:center;padding:12px;border:1px solid #34352b}
+.ryveo-cart-row img{width:92px;height:112px;object-fit:cover;background:#20211b}
+.ryveo-cart-row h3{font:700 16px 'Space Grotesk';margin:0 0 7px}
+.ryveo-cart-row p{font-size:11px;color:#aaa99d;margin:4px 0}
+.ryveo-cart-row input{width:62px;padding:8px;background:#151610;color:white;border:1px solid #555}
+.ryveo-remove{background:none;border:0;color:#ff8b8b;text-decoration:underline;cursor:pointer;font-size:11px}
+.ryveo-summary{margin-left:auto;max-width:420px;border:1px solid #34352b;padding:22px}
+.ryveo-summary-line{display:flex;justify-content:space-between;gap:20px;margin:10px 0;font-size:13px}
+.ryveo-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ryveo-form-grid .wide{grid-column:1/-1}
+.ryveo-note{padding:14px;border:1px solid #6a6537;background:#242316;color:#e7e2b2;font-size:12px;line-height:1.6;margin:16px 0}
+.ryveo-upload-preview{display:none;max-width:240px;max-height:260px;object-fit:contain;border:1px solid #555;padding:5px}
+@media(max-width:760px){.ryveo-product-layout{grid-template-columns:1fr}.ryveo-product-photo{max-height:560px}.ryveo-info-grid{grid-template-columns:1fr}.ryveo-cart-row{grid-template-columns:72px 1fr}.ryveo-cart-row img{width:72px;height:90px}.ryveo-cart-row .row-end{grid-column:2;display:flex;gap:12px;align-items:center}.ryveo-form-grid{grid-template-columns:1fr}.ryveo-form-grid .wide{grid-column:auto}.ryveo-shell{padding-top:28px}}
