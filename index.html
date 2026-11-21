@@ -108,6 +108,7 @@ body.site-loading{overflow:hidden}
 @media(max-width:700px){.doorway-grid{grid-template-columns:1fr}.doorway-card{min-height:280px;padding:22px}.shop-doorway{padding-left:4%;padding-right:4%}}
 
 </style>
+<link rel="stylesheet" href="store.css">
 </head>
 <body class="site-loading">
 
@@ -120,7 +121,7 @@ body.site-loading{overflow:hidden}
 </div>
 
 <div class="announcement">FRESH FITS. LOUD PERSONALITY. <span>✳</span> PAN-INDIA DELIVERY</div>
-<header><a class="logo" href="#top" aria-label="RYVEO.IN home">RYVEO<em>.</em></a><nav class="nav"><a href="#top">Home</a><a href="boys.html">Boys</a><a href="girls.html">Girls</a><a href="#all-drops">Shop all</a><a href="#custom">Custom prints</a></nav></header>
+<header><a class="logo" href="#top" aria-label="RYVEO.IN home">RYVEO<em>.</em></a><nav class="nav"><a href="#top">Home</a><a href="boys.html">Boys</a><a href="girls.html">Girls</a><a href="#all-drops">Shop all</a><a href="custom-print.html">Custom prints</a></nav></header>
 <section class="hero" id="top"><div class="orb" aria-hidden="true"></div><div class="hero-inner"><div class="eyebrow">Not made to blend in</div><h1>Wear your <span>own vibe.</span></h1><p class="hero-copy">Streetwear for your main-character era. Graphic tees, oversized energy and designs that say it before you do.</p><div class="hero-actions"><a class="btn btn-primary" href="boys.html">Shop Boys <span>↗</span></a><a class="btn btn-secondary" href="girls.html">Shop Girls <span>↗</span></a></div><div class="hero-note">Designed for <b>your mood</b> · Styled by <b>you</b> · Delivered across India</div></div><div class="hero-visual" aria-label="RYVEO featured streetwear collection"><div class="hero-photo"><img src="black%20panther.jpg" alt="RYVEO graphic streetwear design" fetchpriority="high"><span class="photo-index">01 / THE ROTATION</span></div><div class="floating-stamp"><span>RYVEO</span><b>NOT<br>AVERAGE</b><small>EST. 2026</small></div><div class="hero-caption"><span>THE NEW UNIFORM</span><b>BUILT TO STAND OUT.</b></div></div></section>
 
 <section class="shop-doorway reveal" id="choose-your-vibe">
@@ -135,29 +136,12 @@ body.site-loading{overflow:hidden}
 <section class="category-section" id="all-drops"><div class="section-head"><div><div class="kicker">The current rotation / 2026</div><h2 class="section-title">THE COLLECTION<span style="color:var(--lime)">.</span></h2></div><div class="section-side">Find the one that feels like you. Pick your colour, choose your size, and order in a tap.</div></div><div class="products" id="products"></div></section>
 <section class="custom-banner" id="custom"><div><div class="kicker">Your idea. Your tee.</div><h3>MAKE IT PERSONAL<span style="color:var(--lime)">.</span></h3><p>Got a line, an inside joke or a design idea? Choose our custom print tee and tell us what you have in mind on WhatsApp.</p></div><a class="btn btn-primary" href="#all-drops">Shop custom print ↗</a></section></main>
 <div class="modal-backdrop" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="product-modal"><button class="modal-close" id="modal-close" aria-label="Close product view">×</button><img class="modal-image" id="modal-image" src="" alt=""><div class="modal-info"><div class="modal-kicker">RYVEO ORIGINAL / PRODUCT VIEW</div><h2 id="modal-title"></h2><p id="modal-description"></p><div class="modal-price" id="modal-price"></div><label for="modal-colour">Colour</label><select id="modal-colour"></select><label for="modal-size">Size</label><select id="modal-size"></select><label for="modal-quantity">Quantity</label><select id="modal-quantity"></select><button class="modal-order" id="modal-order">ORDER ON WHATSAPP ↗</button></div></div></div>
-<section class="trust-strip reveal"><div><b>01</b><span>MADE FOR YOUR MOOD</span></div><div><b>02</b><span>MADE TO GET NOTICED</span></div><div><b>03</b><span>DELIVERED PAN-INDIA</span></div></section><footer><div class="footer-top"><div class="footer-brand"><a class="logo" href="#top">RYVEO<em>.</em></a><p>Find your fit. Own your vibe. Streetwear for people who were never meant to be copy-paste.</p></div><div class="footer-links"><a href="#all-drops">Shop collection</a><a href="https://www.instagram.com/ryveo.in/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="#custom">Custom prints</a></div></div><div class="footer-bottom"><span>© 2026 RYVEO. ALL RIGHTS RESERVED.</span><span>PAN-INDIA DELIVERY · ORDERS VIA WHATSAPP</span></div></footer>
+<section class="trust-strip reveal"><div><b>01</b><span>MADE FOR YOUR MOOD</span></div><div><b>02</b><span>MADE TO GET NOTICED</span></div><div><b>03</b><span>DELIVERED PAN-INDIA</span></div></section><footer><div class="footer-top"><div class="footer-brand"><a class="logo" href="#top">RYVEO<em>.</em></a><p>Find your fit. Own your vibe. Streetwear for people who were never meant to be copy-paste.</p></div><div class="footer-links"><a href="#all-drops">Shop collection</a><a href="https://www.instagram.com/ryveo.in/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="custom-print.html">Custom prints</a></div></div><div class="footer-bottom"><span>© 2026 RYVEO. ALL RIGHTS RESERVED.</span><span>PAN-INDIA DELIVERY · ORDERS VIA WHATSAPP</span></div></footer>
+<script src="catalog.js"></script>
 <script>
 // India WhatsApp number: country code + 10-digit number, without + or spaces.
 const WHATSAPP_NUMBER = "917827271703";
-const products = [
-{name:"Indigo baddie Streetwear Lookbook",price:649,image:"Indigo Adddie Streetwear Lookbook.png",description:"Everyday oversized streetwear",colours:["Denim"],sizes:["S","M","L","XL"]},
-{name:"diet joke",price:649,image:"a6432371-2522-4b9e-bc14-d75623ed1c41.jpg",description:"Get it on the front or back — your call",colours:["Black","White"],sizes:["S","M","L","XL"]},
-{name:"vodkas are best",price:599,image:"0aff0740-20ed-4c0f-a9c1-b2a85b6d619a.jpg",description:"Minimal fit, maximum vibe",colours:["Black"],sizes:["XS","S","M","L"]},
-{name:"might be drunk a little",price:619,image:"5ea8b75a-c186-421b-93be-34007164f423.jpg",description:"Are you sure you're seeing it perfectly?",colours:["Black"],sizes:["S","M","L","XL"]},
-{name:"warned by mom",price:699,image:"warned by mom.jpeg",description:"Your Mom Knows Me!",colours:["White"],sizes:["S","M","L","XL"]},
-{name:"poisoned and venomous now",price:649,image:"venomous1.0.jpg",description:"Snake bite hard!",colours:["White"],sizes:["S","M","L","XL"]},
-{name:"Deathbed",price:599,image:"deathrow.jpg",description:"Must be cooler!",colours:["Black"],sizes:["S","M","L","XL"]},
-{name:"Knights and the Warriors",price:699,image:"warriors.jpg",description:"Warriors of the battlefield",colours:["Black"],sizes:["S","M","L","XL"]},
-{name:"Pantherious",price:649,image:"black panther.jpg",description:"The panther has something to say",colours:["Black"],sizes:["S","M","L","XL"]},
-{name:"Pantherious — White Panther",price:649,image:"white panther.jpg",description:"The panther has something to say",colours:["White"],sizes:["S","M","L","XL"]},
-{name:"absolut diva",price:699,image:"f86f3dd5-e6bc-43a2-ae7d-e9b7ec0ff237.jpg",description:"Slayy, gurl.",colours:["White"],sizes:["S","M","L","XL"]},
-{name:"custom print baby",price:599,image:"image.png",description:"Let your T-shirt speak for you",colours:["Black","White"],sizes:["S","M","L","XL"]},
-{name:"Jaat Balwan",price:649,image:"jaat balwan.jpeg",description:"JAI JAAT",colours:["White"],sizes:["S","M","L","XL"]},
-{name:"Choti Advance",price:609,image:"choti adv.jpeg",description:"For the smokers",colours:["White"],sizes:["S","M","L","XL"]}
-];
-// Curated categories: bold graphic/masculine edits under OFF-GRID BOYS; expressive and custom styles under IT-GIRL ENERGY.
-const boysNames = new Set(["warned by mom","custom print baby","poisoned and venomous now","Deathbed","Knights and the Warriors","Pantherious","Pantherious — White Panther","Jaat Balwan","Choti Advance"]);
-products.forEach(p => p.category = boysNames.has(p.name) ? "boys" : "girls");
+const products = window.RYVEO_CATALOG;
 const container=document.getElementById("products");
 products.forEach((p,i)=>{
  const card=document.createElement("article");card.className="product";
@@ -214,7 +198,7 @@ document.getElementById("modal-order").addEventListener("click",()=>{if(activePr
  function reveal(root=document){root.querySelectorAll(".shop-doorway,.section-head,.custom-banner,.trust-strip,.manifesto,.product").forEach((el,i)=>{if(el.classList.contains("is-visible"))return;el.classList.add("reveal");if(el.classList.contains("product"))el.style.setProperty("--reveal-delay",(i%4)*75+"ms");if(observer)observer.observe(el);else el.classList.add("is-visible");});}
  reveal();
  const customCta=document.querySelector(".custom-banner .btn");
- if(customCta){customCta.href="#all-drops";customCta.addEventListener("click",function(e){const custom=products.find(p=>p.name==="custom print baby");if(custom&&typeof openProduct==="function"){e.preventDefault();openProduct(custom);}});}
+ if(customCta){customCta.href="custom-print.html";}
  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",function(e){const target=document.querySelector(this.getAttribute("href"));if(target){e.preventDefault();target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}}));
 })();
 </script>
@@ -240,4 +224,5 @@ document.getElementById("modal-order").addEventListener("click",()=>{if(activePr
 })();
 </script>
 
+<script src="store.js"></script>
 </body></html>
