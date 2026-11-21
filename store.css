@@ -1,12 +1,12 @@
 /* RYVEO 3.0 — shopping layer */
-.ryveo-cart-link{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--lime,#d6ff3f);padding:9px 12px;font-weight:900;font-size:10px;letter-spacing:1px;white-space:nowrap}
-.ryveo-cart-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:50%;background:var(--lime,#d6ff3f);color:#111;font-size:10px}
+.ryveo-cart-link{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--accent,var(--lime,#d6ff3f));padding:9px 12px;font-weight:900;font-size:10px;letter-spacing:1px;white-space:nowrap}
+.ryveo-cart-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:50%;background:var(--accent,var(--lime,#d6ff3f));color:var(--button-ink,#111);font-size:10px}
 .ryveo-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
 .ryveo-tools input,.ryveo-tools select{min-height:42px;padding:10px 12px;border:1px solid #444;background:#151610;color:#f5f4ec;min-width:145px;flex:1}
 .girls-page .ryveo-tools input,.girls-page .ryveo-tools select{background:#fff;color:#241823;border-color:#f1cada}
 .ryveo-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
-.ryveo-card-actions a,.ryveo-card-actions button{display:flex;align-items:center;justify-content:center;min-height:39px;padding:9px 6px;border:1px solid var(--lime,#d6ff3f);background:transparent;color:inherit;font-size:9px;font-weight:900;letter-spacing:.5px;cursor:pointer;text-align:center}
-.ryveo-card-actions button{background:var(--lime,#d6ff3f);color:#111}
+.ryveo-card-actions a,.ryveo-card-actions button{display:flex;align-items:center;justify-content:center;min-height:39px;padding:9px 6px;border:1px solid var(--accent,var(--lime,#d6ff3f));background:transparent;color:inherit;font-size:9px;font-weight:900;letter-spacing:.5px;cursor:pointer;text-align:center}
+.ryveo-card-actions button{background:var(--accent,var(--lime,#d6ff3f));color:var(--button-ink,#111)}
 .girls-page .ryveo-card-actions a,.girls-page .ryveo-card-actions button{border-radius:999px}
 .ryveo-page{min-height:100vh;background:#10110e;color:#f5f4ec}
 .ryveo-shell{width:min(1160px,92%);margin:0 auto;padding:42px 0 80px}
