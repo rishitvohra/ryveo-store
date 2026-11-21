@@ -41,3 +41,14 @@
 .ryveo-note{padding:14px;border:1px solid #6a6537;background:#242316;color:#e7e2b2;font-size:12px;line-height:1.6;margin:16px 0}
 .ryveo-upload-preview{display:none;max-width:240px;max-height:260px;object-fit:contain;border:1px solid #555;padding:5px}
 @media(max-width:760px){.ryveo-product-layout{grid-template-columns:1fr}.ryveo-product-photo{max-height:560px}.ryveo-info-grid{grid-template-columns:1fr}.ryveo-cart-row{grid-template-columns:72px 1fr}.ryveo-cart-row img{width:72px;height:90px}.ryveo-cart-row .row-end{grid-column:2;display:flex;gap:12px;align-items:center}.ryveo-form-grid{grid-template-columns:1fr}.ryveo-form-grid .wide{grid-column:auto}.ryveo-shell{padding-top:28px}}
+
+.ryveo-summary-title{font:800 18px 'Space Grotesk',sans-serif;letter-spacing:.04em;margin:0 0 18px}
+.ryveo-coupon{border-top:1px solid #34352b;border-bottom:1px solid #34352b;padding:16px 0;margin:14px 0}
+.ryveo-coupon>label{display:block;font-size:11px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;margin-bottom:9px}
+.ryveo-coupon-entry{display:flex;gap:8px}
+.ryveo-coupon-entry input{min-width:0;flex:1;padding:12px;background:#151610;border:1px solid #555;color:#f5f4ec;text-transform:uppercase}
+.ryveo-coupon-entry button{padding:0 15px;background:#d6ff3f;color:#10110e;border:0;font-size:10px;font-weight:900;letter-spacing:.6px;cursor:pointer}
+.ryveo-coupon-hint,.ryveo-coupon-message{font-size:10px;line-height:1.55;color:#aaa99d;margin:9px 0 0}
+.ryveo-coupon-message{color:#d6ff3f}.ryveo-coupon-message.is-error{color:#ff9999}
+.ryveo-summary-line.ryveo-discount{color:#d6ff3f}
+.ryveo-summary-line.ryveo-total{border-top:1px solid #555;padding-top:15px;margin-top:15px;font-size:16px;font-weight:900}
