@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS orders (order_ref TEXT PRIMARY KEY, razorpay_order_id TEXT NOT NULL UNIQUE, payment_id TEXT UNIQUE, amount INTEGER NOT NULL, status TEXT NOT NULL, customer_json TEXT NOT NULL, items_json TEXT NOT NULL, created_at TEXT NOT NULL, paid_at TEXT, estimated_delivery TEXT);
+CREATE INDEX IF NOT EXISTS orders_rzp_idx ON orders(razorpay_order_id);
