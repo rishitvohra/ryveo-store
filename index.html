@@ -107,10 +107,60 @@ body.site-loading{overflow:hidden}
 .doorway-card b{font-size:10px;letter-spacing:1.5px;color:var(--lime)}.doorway-girls b{color:#ff8db7}
 @media(max-width:700px){.doorway-grid{grid-template-columns:1fr}.doorway-card{min-height:280px;padding:22px}.shop-doorway{padding-left:4%;padding-right:4%}}
 
+
+/* RYVEO HOMEPAGE — editorial streetwear atmosphere */
+body{position:relative;isolation:isolate}
+.home-atmosphere{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 8% 18%,rgba(214,255,63,.075),transparent 28%),
+    radial-gradient(ellipse at 91% 38%,rgba(255,111,159,.075),transparent 30%),
+    radial-gradient(ellipse at 52% 92%,rgba(214,255,63,.045),transparent 34%),
+    linear-gradient(rgba(245,244,236,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(245,244,236,.018) 1px,transparent 1px);
+  background-size:auto,auto,auto,72px 72px,72px 72px;
+  mask-image:linear-gradient(to bottom,black 0%,rgba(0,0,0,.88) 62%,transparent 100%);
+}
+.home-atmosphere:before{
+  content:"";position:absolute;width:min(54vw,720px);aspect-ratio:1;border:1px solid rgba(214,255,63,.10);
+  border-radius:50%;right:-17%;top:13%;box-shadow:inset 0 0 0 28px rgba(214,255,63,.012),inset 0 0 0 75px rgba(214,255,63,.012),0 0 100px rgba(214,255,63,.025);
+}
+.home-atmosphere:after{
+  content:"RYVEO  /  WEAR YOUR OWN VIBE";position:absolute;right:-.3em;top:54%;
+  color:rgba(245,244,236,.025);font:700 clamp(44px,8vw,118px)/.9 'Space Grotesk',sans-serif;
+  letter-spacing:.12em;white-space:nowrap;transform:rotate(-90deg) translateX(50%);transform-origin:right center;
+}
+body> :not(.home-atmosphere){position:relative;z-index:1}
+.site-loader{z-index:10000}
+.hero{background:
+  radial-gradient(ellipse at 80% 45%,rgba(214,255,63,.105),transparent 34%),
+  radial-gradient(ellipse at 15% 95%,rgba(255,111,159,.075),transparent 30%),
+  transparent}
+.shop-doorway{background:transparent}
+.manifesto{background:linear-gradient(115deg,rgba(23,24,18,.76),rgba(16,17,14,.48) 60%,rgba(16,17,14,.72))}
+.category-section{position:relative}
+.category-section:before{
+  content:"";position:absolute;left:-7%;top:4%;width:190px;height:190px;border:1px solid rgba(214,255,63,.07);
+  border-radius:50%;pointer-events:none;box-shadow:0 0 0 24px rgba(214,255,63,.012),0 0 0 48px rgba(214,255,63,.01)
+}
+.custom-banner{backdrop-filter:blur(5px);background:radial-gradient(ellipse at 95% 10%,rgba(255,111,159,.12),transparent 38%),rgba(25,26,22,.78)}
+.doorway-card{isolation:isolate}
+.doorway-card:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.075);pointer-events:none;z-index:-1}
+.doorway-boys:before,.doorway-girls:before{content:"✳";position:absolute;right:22px;top:18px;font-size:clamp(65px,10vw,130px);opacity:.08;line-height:1}
+.doorway-girls:before{content:"♡";font-size:clamp(80px,12vw,150px);color:#ff8db7}
+@media(max-width:700px){
+  .home-atmosphere{background-size:auto,auto,auto,54px 54px,54px 54px}
+  .home-atmosphere:before{width:90vw;right:-48%;top:21%}
+  .home-atmosphere:after{font-size:48px;opacity:.8;top:58%}
+  .category-section:before{width:115px;height:115px;left:-8%;top:0}
+}
+@media(prefers-reduced-motion:reduce){.home-atmosphere:before,.home-atmosphere:after{transition:none}}
+
 </style>
 <link rel="stylesheet" href="store.css">
 </head>
 <body class="site-loading">
+<div class="home-atmosphere" aria-hidden="true"></div>
 
 <!-- CINEMATIC OPENING LOADER -->
 <div class="site-loader" id="site-loader" role="status" aria-label="Loading RYVEO.IN">
