@@ -180,6 +180,7 @@ products.forEach((p,i)=>{
 // Re-render category cards with working controls and image previews (cloneNode does not copy event listeners).
 ["boys","girls"].forEach(category=>{
  const grid=document.getElementById(category+"-products");
+ if(!grid)return;
  [...grid.children].forEach((card,idx)=>{
   const p=products.filter(item=>item.category===category)[idx];
   const wrap=card.querySelector(".image-wrap"), img=card.querySelector("img"), title=card.querySelector("h3");
