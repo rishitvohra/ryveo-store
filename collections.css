@@ -87,3 +87,7 @@ body.ryveo-page-leaving{animation:ryveoPageLeave .2s ease-in both;pointer-events
 @media(prefers-reduced-motion:reduce){
   body.boys-page,body.girls-page,body.ryveo-page-leaving{animation:none!important}
 }
+
+
+/* Consistent premium product-title typography for Men and Women collections */
+.collection-product-info h3{font-family:"Space Grotesk",sans-serif!important;font-weight:700!important;letter-spacing:-.055em!important;text-transform:uppercase;line-height:1.08!important;text-wrap:balance;min-height:2.16em}

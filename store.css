@@ -221,3 +221,9 @@ body.ryveo-cart-unified .ryveo-summary-title,body.ryveo-cart-unified .ryveo-summ
 body.ryveo-cart-unified .ryveo-btn,body.ryveo-cart-unified #ryveo-apply-coupon{background:#d6ff3f!important;border-color:#d6ff3f!important;color:#10110e!important}
 body.ryveo-cart-unified .ryveo-coupon-entry input,body.ryveo-cart-unified .ryveo-field input,body.ryveo-cart-unified .ryveo-field textarea{background:#11120f!important;border-color:#45473a!important;color:#f5f4ec!important}
 body.ryveo-cart-unified .ryveo-cart-item img{border:1px solid rgba(245,244,236,.12)}
+
+
+/* Product naming: sharp editorial typography across cards and detail views */
+.product .product-info h3,.product-modal .modal-info h2,.ryveo-product-copy h1,.ryveo-cart-row h3,.ryveo-wishlist-info h2{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.055em;text-wrap:balance}
+.product .product-info h3{font-size:clamp(14px,1.25vw,18px);line-height:1.08;min-height:2.16em;text-transform:uppercase}
+.product-modal .modal-info h2,.ryveo-product-copy h1{line-height:.98;}
