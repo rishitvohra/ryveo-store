@@ -72,3 +72,18 @@
 .girls-page .collection-custom .collection-btn{background:#241823;color:white;border-color:#241823}
 .girls-mantra{margin:0 6% 80px;padding:60px 20px;background:#e8dcff;border-radius:22px;text-align:center;color:#30213e;display:flex;flex-direction:column;align-items:center;gap:10px}
 .girls-mantra span,.girls-mantra small{font-size:9px;letter-spacing:2px;font-weight:900}.girls-mantra strong{font:900 clamp(45px,9vw,100px)/.9 'Outfit';letter-spacing:-.08em}.girls-mantra i{font-style:normal;color:#ff4f86}.girls-mantra small{color:#7c659d}
+
+
+/* SMOOTH COLLECTION PAGE TRANSITIONS */
+@keyframes ryveoPageEnter{
+  from{opacity:0;transform:translateY(14px);filter:blur(5px)}
+  to{opacity:1;transform:translateY(0);filter:blur(0)}
+}
+@keyframes ryveoPageLeave{
+  to{opacity:0;transform:translateY(-7px);filter:blur(3px)}
+}
+body.boys-page,body.girls-page{animation:ryveoPageEnter .7s cubic-bezier(.16,1,.3,1) both}
+body.ryveo-page-leaving{animation:ryveoPageLeave .2s ease-in both;pointer-events:none}
+@media(prefers-reduced-motion:reduce){
+  body.boys-page,body.girls-page,body.ryveo-page-leaving{animation:none!important}
+}
