@@ -30,3 +30,23 @@
 .rv30-checkout-steps i{height:1px;min-width:18px;flex:1;background:rgba(255,255,255,.16)}
 @media(max-width:760px){.rv30-trust-grid,.rv30-detail-grid{grid-template-columns:1fr}.rv30-trust-grid p,.rv30-detail-grid p{min-height:0}.rv30-trust{margin:35px 0;padding:22px 16px}.rv30-product-details{padding:22px 16px}.rv30-checkout-steps{gap:8px}.rv30-checkout-steps span{font-size:7px}.rv30-checkout-steps i{min-width:8px}}
 @media(prefers-reduced-motion:reduce){.rv30-art-preview{transition:none}}
+
+/* RYVEO 3.0 responsive filter layout + collection palette */
+.rv-shop-tools{grid-template-columns:minmax(165px,1.4fr) repeat(5,minmax(95px,.65fr)) auto}
+.ryveo-tools{display:grid;grid-template-columns:minmax(160px,1.3fr) repeat(4,minmax(100px,.7fr)) auto;gap:10px;align-items:end}
+.ryveo-tools input,.ryveo-tools select{min-width:0;width:100%}
+body.girls-page .rv30-trust{background:linear-gradient(130deg,#fff8fb,#f2eafa);border-color:#edcbd9;color:#261b25}
+body.girls-page .rv30-trust-head>span,body.girls-page .rv30-social>span{color:#d83b73}
+body.girls-page .rv30-trust-head h2 em{color:#e85e91}
+body.girls-page .rv30-trust-head p,body.girls-page .rv30-social p,body.girls-page .rv30-trust-grid p{color:#756574}
+body.girls-page .rv30-trust-grid article{background:#fff;border-color:#efd8e2}
+body.girls-page .rv30-trust-grid article>b,body.girls-page .rv30-trust-grid a{color:#d83b73}
+@media(max-width:760px){
+ .rv-shop-tools{grid-template-columns:1fr 1fr}
+ .rv-shop-tools .rv-search{grid-column:1/-1}
+ .rv-shop-tools #rv-result-count{grid-column:1/-1}
+ .ryveo-tools{grid-template-columns:1fr 1fr}
+ .ryveo-tools input[type=search]{grid-column:1/-1}
+ .rv30-count{grid-column:1/-1}
+}
+@media(max-width:420px){.rv-shop-tools,.ryveo-tools{grid-template-columns:1fr}.rv-shop-tools .rv-search,.ryveo-tools input[type=search]{grid-column:auto}}
