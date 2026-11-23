@@ -50,3 +50,7 @@ body.girls-page .rv30-trust-grid article>b,body.girls-page .rv30-trust-grid a{co
  .rv30-count{grid-column:1/-1}
 }
 @media(max-width:420px){.rv-shop-tools,.ryveo-tools{grid-template-columns:1fr}.rv-shop-tools .rv-search,.ryveo-tools input[type=search]{grid-column:auto}}
+
+/* Keep the homepage's editorial filter bar as the single source of controls. */
+.category-section>.ryveo-tools{display:none!important}
+.rv-custom-tee-stage{position:relative}
