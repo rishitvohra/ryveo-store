@@ -1,0 +1,62 @@
+/* RYVEO UNIVERSE — bold interactive editorial layer */
+.rv-universe-section{position:relative;overflow:hidden;margin:clamp(54px,7vw,100px) 0;padding:clamp(28px,5vw,66px);background:linear-gradient(135deg,#171914 0%,#0d0e0b 58%,#1a1715 100%);border:1px solid rgba(214,255,63,.24);box-shadow:0 25px 80px rgba(0,0,0,.22)}
+.rv-universe-section:before{content:"";position:absolute;width:420px;height:420px;right:-180px;top:-210px;border:1px solid rgba(214,255,63,.18);border-radius:50%;box-shadow:0 0 0 35px rgba(214,255,63,.025),0 0 0 75px rgba(214,255,63,.018);pointer-events:none}
+.rv-universe-kicker{display:block;color:#d6ff3f;font-size:9px;font-weight:900;letter-spacing:2.8px;text-transform:uppercase}
+.rv-universe-title{position:relative;margin:12px 0 15px;font:800 clamp(38px,6vw,76px)/.91 'Space Grotesk',sans-serif;letter-spacing:-.085em;text-transform:uppercase}
+.rv-universe-title em{color:#d6ff3f;font-style:normal}
+.rv-universe-copy{max-width:560px;color:#aaa99d;font-size:13px;line-height:1.8}
+.rv-universe-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.rv-universe-panel{min-width:0;padding:clamp(18px,3vw,30px);background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.13)}
+.rv-universe-panel h3{margin:8px 0 12px;font:800 clamp(23px,3vw,34px)/1 'Space Grotesk',sans-serif;letter-spacing:-.06em}
+.rv-universe-panel p{color:#aaa99d;font-size:12px;line-height:1.7}
+.rv-universe-form{display:grid;gap:12px;margin-top:20px}
+.rv-universe-form label{display:grid;gap:7px;color:#aaa99d;font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+.rv-universe-form select{width:100%;min-height:45px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#10110e;color:#f5f4ec;font:600 12px 'DM Sans',sans-serif}
+.rv-universe-action{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:46px;padding:13px 17px;border:0;background:#d6ff3f;color:#10110e;font-size:9px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;cursor:pointer}
+.rv-universe-action:hover{background:#e7ff8c;transform:translateY(-2px)}
+.rv-id-result{display:none;margin-top:18px;padding:20px;background:linear-gradient(135deg,#d6ff3f,#b5e82d);color:#10110e;border:1px solid #f0ffad}
+.rv-id-result.is-visible{display:block;animation:rvUniversePop .45s cubic-bezier(.16,1,.3,1) both}
+.rv-id-result small{display:block;font-size:8px;font-weight:900;letter-spacing:2px}
+.rv-id-result strong{display:block;margin:9px 0;font:900 clamp(28px,4vw,44px)/.95 'Space Grotesk',sans-serif;letter-spacing:-.07em}
+.rv-id-result p{margin:0;color:#252b14;font-size:11px;line-height:1.6}
+.rv-id-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.rv-id-actions button{padding:10px 13px;border:1px solid #10110e;background:transparent;color:#10110e;font-size:8px;font-weight:900;letter-spacing:1px;cursor:pointer}
+.rv-outfit-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.rv-outfit-item{padding:9px;background:#10110e;border:1px solid rgba(255,255,255,.12)}
+.rv-outfit-item img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#222}
+.rv-outfit-item strong{display:block;margin-top:8px;font:700 11px 'Space Grotesk',sans-serif}
+.rv-outfit-item small{display:block;margin-top:4px;color:#d6ff3f;font-size:9px}
+.rv-outfit-feedback{min-height:18px;color:#d6ff3f;font-size:10px;line-height:1.5}
+.rv-journal-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:25px}
+.rv-journal-card{display:flex;flex-direction:column;min-height:210px;padding:20px;background:#171914;border:1px solid rgba(255,255,255,.13)}
+.rv-journal-card span{color:#d6ff3f;font-size:8px;font-weight:900;letter-spacing:1.8px}
+.rv-journal-card h3{margin:28px 0 10px;font:800 clamp(19px,2.5vw,27px)/1 'Space Grotesk',sans-serif;letter-spacing:-.06em}
+.rv-journal-card p{margin:0;color:#aaa99d;font-size:11px;line-height:1.7}
+.rv-journal-card b{margin-top:auto;padding-top:18px;color:#d6ff3f;font-size:8px;letter-spacing:1.3px}
+.rv-community{display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(110deg,#d6ff3f,#c0ed42 62%,#f3a7c4);color:#10110e}
+.rv-community .rv-universe-kicker{color:#29320c}
+.rv-community .rv-universe-title em{color:#fff}
+.rv-community .rv-universe-copy{color:#30351f}
+.rv-community .rv-universe-action{background:#10110e;color:#d6ff3f;white-space:nowrap}
+.rv-hangtag{position:relative;margin:28px 0;padding:22px 24px;background:linear-gradient(120deg,rgba(214,255,63,.09),rgba(255,255,255,.025));border:1px solid rgba(214,255,63,.3)}
+.rv-hangtag:before{content:"";position:absolute;left:50%;top:-7px;width:12px;height:12px;border-radius:50%;background:#10110e;border:1px solid #d6ff3f}
+.rv-hangtag-head{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#d6ff3f;font-size:8px;font-weight:900;letter-spacing:2px}
+.rv-hangtag h2{margin:12px 0 8px;font:800 clamp(22px,3vw,32px)/1 'Space Grotesk',sans-serif;letter-spacing:-.05em}
+.rv-hangtag p{color:#aaa99d;font-size:11px;line-height:1.7}
+.rv-hangtag-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;color:#f5f4ec;font-size:9px;font-weight:800;letter-spacing:1px}
+.rv-hangtag-meta span{color:#d6ff3f}
+.rv-hangtag button{margin-top:16px;padding:10px 13px;border:1px solid rgba(214,255,63,.55);background:transparent;color:#d6ff3f;font-size:8px;font-weight:900;letter-spacing:1px;cursor:pointer}
+@keyframes rvUniversePop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+body.girls-page .rv-universe-section{background:linear-gradient(135deg,#fff7fa,#f2eaff 65%,#ffeaf1);border-color:#edcbd9;color:#261b25}
+body.girls-page .rv-universe-kicker,body.girls-page .rv-hangtag-head,body.girls-page .rv-hangtag-meta span{color:#d83b73}
+body.girls-page .rv-universe-copy,body.girls-page .rv-universe-panel p,body.girls-page .rv-journal-card p,body.girls-page .rv-hangtag p{color:#756574}
+body.girls-page .rv-universe-panel,body.girls-page .rv-journal-card{background:rgba(255,255,255,.65);border-color:#edcbd9}
+body.girls-page .rv-universe-form select{background:#fff;color:#261b25;border-color:#edcbd9}
+body.girls-page .rv-id-result{background:linear-gradient(135deg,#f7a9c5,#e9c7ff);border-color:#fff}
+body.girls-page .rv-id-result p{color:#493143}
+body.girls-page .rv-outfit-item{background:#fff;border-color:#edcbd9}
+body.girls-page .rv-outfit-item small,body.girls-page .rv-journal-card span,body.girls-page .rv-journal-card b{color:#d83b73}
+body.girls-page .rv-hangtag{background:linear-gradient(120deg,#fff4f8,#f2eaff);border-color:#edcbd9}
+body.girls-page .rv-hangtag-meta{color:#493143}
+@media(max-width:760px){.rv-universe-grid{grid-template-columns:1fr}.rv-journal-grid{grid-template-columns:1fr}.rv-community{align-items:flex-start;flex-direction:column}.rv-community .rv-universe-action{width:100%}.rv-universe-section{padding:25px 18px;margin:48px 0}.rv-outfit-preview{gap:7px}}
+@media(prefers-reduced-motion:reduce){.rv-id-result.is-visible{animation:none}.rv-universe-action:hover{transform:none}}
