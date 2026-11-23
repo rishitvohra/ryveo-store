@@ -322,7 +322,7 @@ header{background:rgba(10,11,10,.88);backdrop-filter:blur(16px);border-bottom:1p
 </style>
 <link rel="stylesheet" href="store.css">
 <link rel="stylesheet" href="ryveo-upgrade.css?v=hybrid-2026">
-<link rel="stylesheet" href="ryveo-site-polish.css?v=20261124a">\n</head>
+<link rel="stylesheet" href="ryveo-site-polish.css?v=phase3-20261124">\n</head>
 <body class="site-loading">
 <div class="home-atmosphere" aria-hidden="true"></div>
 
@@ -347,6 +347,15 @@ header{background:rgba(10,11,10,.88);backdrop-filter:blur(16px);border-bottom:1p
   </div>
 </section>
 
+<section class="rv-vibe-finder reveal" id="vibe-finder">
+  <div class="rv-vibe-intro"><span class="kicker">THE RYVEO FIT CHECK / 01</span><h2>WHAT’S YOUR<br><em>ENERGY TODAY?</em></h2><p>Pick a mood. We’ll match you with a piece from the current RYVEO rotation.</p></div>
+  <div class="rv-vibe-controls">
+    <label><span>YOUR MOOD</span><select id="rv-vibe-mood"><option value="bold">Bold & unapologetic</option><option value="playful">Playful & chaotic</option><option value="custom">One of one</option><option value="any">Surprise me</option></select></label>
+    <label><span>YOUR EDIT</span><select id="rv-vibe-category"><option value="all">Show me everything</option><option value="boys">Off-Grid Men</option><option value="girls">It-Girl Edit</option></select></label>
+    <button class="btn btn-primary" id="rv-vibe-submit" type="button">FIND MY VIBE ↗</button>
+  </div>
+  <div class="rv-vibe-result" id="rv-vibe-result" aria-live="polite"><span>YOUR MATCH WILL SHOW UP HERE.</span></div>
+</section>
 <section class="ryveo-lookbook-preview reveal" id="lookbook-preview">
   <div class="ryveo-editorial-heading"><div><span class="kicker">THE RYVEO LOOKBOOK / 2026</span><h2>NOT JUST A TEE.<br><em>A WHOLE MOOD.</em></h2></div><a class="ryveo-text-link" href="lookbook.html">EXPLORE THE LOOKBOOK ↗</a></div>
   <div class="ryveo-lookbook-grid">
@@ -480,4 +489,5 @@ document.getElementById("modal-order").addEventListener("click",()=>{if(activePr
 
 <script src="store.js"></script>
 <script src="ryveo-upgrade.js?v=hybrid-2026"></script>
+<script src="ryveo-phase3.js?v=20261124"></script>
 </body></html>

@@ -171,3 +171,73 @@ body.ryveo-page.girls-page{background:#fff3f7}
 }
 @media(max-width:420px){.rv-shop-tools{grid-template-columns:1fr}.rv-shop-tools .rv-search{grid-column:auto}#rv-result-count{margin-top:4px}}
 @media(prefers-reduced-motion:reduce){.rv-brand-story-image img,.product .image-wrap img{transition:none!important}}
+
+
+/* RYVEO PHASE 3 — hybrid editorial discovery + utility */
+.rv-vibe-finder{margin:clamp(55px,8vw,105px) 6%;padding:clamp(25px,5vw,58px);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);gap:25px 55px;align-items:center;border:1px solid rgba(214,255,63,.28);background:radial-gradient(ellipse at 95% 0,rgba(214,255,63,.11),transparent 38%),linear-gradient(125deg,#1a1c15,#10110e)}
+.rv-vibe-intro h2{font:700 clamp(38px,5.6vw,70px)/.88 'Space Grotesk';letter-spacing:-.085em;margin:17px 0}
+.rv-vibe-intro h2 em{font-style:normal;color:var(--rv-lime)}
+.rv-vibe-intro p{max-width:420px;color:var(--rv-muted);font-size:13px;line-height:1.8}
+.rv-vibe-controls{display:grid;gap:12px}
+.rv-vibe-controls label{display:grid;gap:7px}
+.rv-vibe-controls label span,.rv-custom-preview-head span+span{font-size:8px;letter-spacing:1.8px;font-weight:800;color:var(--rv-muted)}
+.rv-vibe-controls select{height:48px;padding:0 13px;background:#10110e;color:#f5f4ec;border:1px solid rgba(255,255,255,.2);font:inherit;font-size:12px}
+.rv-vibe-controls button{width:100%;cursor:pointer}
+.rv-vibe-result{grid-column:1/-1;min-height:48px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
+.rv-vibe-result>span{font-size:9px;letter-spacing:1.6px;color:var(--rv-muted)}
+.rv-vibe-result-heading{display:flex;justify-content:space-between;gap:15px;margin-bottom:13px;font-size:9px;letter-spacing:1.6px}
+.rv-vibe-result-heading b{color:var(--rv-lime)}
+.rv-vibe-picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rv-vibe-pick{display:flex;align-items:center;gap:12px;min-width:0;padding:9px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1)}
+.rv-vibe-pick img{width:68px;height:82px;object-fit:cover;background:#25261f}
+.rv-vibe-pick span{display:grid;gap:7px;min-width:0}
+.rv-vibe-pick strong{font:700 13px 'Space Grotesk'}
+.rv-vibe-pick small{font-size:8px;letter-spacing:.8px;color:var(--rv-lime)}
+.rv-product-zoomable{cursor:zoom-in;transition:transform .35s,filter .35s}
+.rv-product-zoomable:hover{filter:brightness(1.05)}
+.rv-image-lightbox{position:fixed;inset:0;z-index:10000;background:rgba(5,6,4,.94);display:grid;place-items:center;padding:5vw;backdrop-filter:blur(12px)}
+.rv-image-lightbox img{max-width:min(90vw,900px);max-height:86vh;object-fit:contain;box-shadow:0 20px 80px #0009}
+.rv-image-lightbox button{position:absolute;right:22px;top:18px;width:46px;height:46px;border:1px solid #ffffff55;background:#171914;color:white;font-size:28px;cursor:pointer}
+.rv-product-tools{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.rv-product-tools a,.rv-product-tools button,.rv-fit-note a{padding:11px 14px;border:1px solid var(--rv-line);background:transparent;color:inherit;font-size:9px;font-weight:800;letter-spacing:1px;cursor:pointer}
+.rv-fit-note{margin:24px 0;padding:18px;border:1px solid var(--rv-line);background:rgba(255,255,255,.035)}
+.rv-fit-note strong{font-size:9px;letter-spacing:1.8px;color:var(--rv-lime)}
+.rv-fit-note p{font-size:12px;line-height:1.8;color:var(--rv-muted)}
+.rv-mobile-buybar{display:none}
+.rv-cart-discover{margin-top:35px;padding:24px 0;border-top:1px solid var(--rv-line)}
+.rv-cart-discover h2{font:700 clamp(25px,4vw,38px) 'Space Grotesk';letter-spacing:-.06em;margin:10px 0 18px}
+.rv-cart-discover>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.rv-cart-discover a{display:grid;gap:8px;padding:10px;background:rgba(255,255,255,.035);border:1px solid var(--rv-line)}
+.rv-cart-discover img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.rv-cart-discover strong{font:700 13px 'Space Grotesk'}
+.rv-cart-discover small{font-size:9px;color:var(--rv-lime);letter-spacing:1px}
+.rv-custom-preview-panel{margin:28px 0;padding:20px;border:1px solid var(--rv-line);background:linear-gradient(135deg,rgba(214,255,63,.07),rgba(255,255,255,.025))}
+.rv-custom-preview-head{display:flex;justify-content:space-between;gap:15px;align-items:center}
+.rv-custom-tee-stage{max-width:390px;margin:10px auto 0}
+.rv-custom-tee-stage svg{display:block;width:100%;height:auto;max-height:410px}
+.rv-custom-tee-stage.is-back svg text#rv-custom-preview-text{transform:translateY(0)}
+.rv-custom-tee-stage.is-both:after{content:"FRONT + BACK PRINT REQUESTED";display:block;text-align:center;color:var(--rv-lime);font-size:8px;letter-spacing:1.5px}
+.rv-custom-preview-panel>p{margin:8px 0 0;text-align:center;color:var(--rv-muted);font-size:10px;line-height:1.7}
+body.girls-page .rv-vibe-finder{background:linear-gradient(130deg,#fff9fb,#f5eafa);border-color:#edcbd9;color:#261b25}
+body.girls-page .rv-vibe-intro h2 em{color:#e85e91}
+body.girls-page .rv-vibe-controls select{background:#fff;color:#261b25;border-color:#edcbd9}
+body.girls-page .rv-vibe-result{border-color:#edcbd9}
+body.girls-page .rv-vibe-pick{background:#fff;border-color:#efd8e2}
+body.girls-page .rv-vibe-pick small{color:#d83b73}
+body.girls-page .rv-custom-preview-panel{background:linear-gradient(130deg,#fff5f8,#eee6ff);border-color:#edcbd9}
+body.girls-page .rv-custom-preview-panel>p{color:#756574}
+@media(max-width:760px){
+ .rv-vibe-finder{margin:48px 4%;grid-template-columns:1fr;gap:18px;padding:23px 18px}
+ .rv-vibe-picks{grid-template-columns:1fr}
+ .rv-vibe-pick img{width:62px;height:72px}
+ .rv-vibe-result-heading{font-size:8px}
+ .rv-cart-discover>div{grid-template-columns:1fr 1fr}
+ .rv-mobile-buybar{position:fixed;z-index:85;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(12,13,10,.96);border-top:1px solid rgba(214,255,63,.28);display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .25s;backdrop-filter:blur(12px)}
+ .rv-mobile-buybar.is-visible{transform:translateY(0)}
+ .rv-mobile-buybar span{font-size:8px;letter-spacing:1px;color:#aaa99d}
+ .rv-mobile-buybar button{border:0;background:#d6ff3f;color:#10110e;padding:13px 14px;font-size:9px;font-weight:900;letter-spacing:.7px;white-space:nowrap}
+ .rv-image-lightbox{padding:12px}
+ .rv-product-tools{display:grid;grid-template-columns:1fr 1fr}
+ .rv-product-tools>*{text-align:center}
+}
+@media(prefers-reduced-motion:reduce){.rv-mobile-buybar{transition:none}}
