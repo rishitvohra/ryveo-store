@@ -1,0 +1,32 @@
+/* RYVEO 3.0 — filter, trust and shopping clarity */
+.rv30-filter{display:grid;gap:7px;min-width:0}
+.rv30-filter>span{font-size:8px;font-weight:800;letter-spacing:1.8px;color:var(--rv-muted,#aaa99d)}
+.rv30-filter select{width:100%;height:44px;padding:0 12px;background:#10110e;color:#f5f4ec;border:1px solid rgba(255,255,255,.18);font:inherit;font-size:11px}
+.rv30-empty{margin:20px 0;padding:35px 18px;text-align:center;border:1px dashed rgba(255,255,255,.22);color:#aaa99d;font-size:10px;font-weight:800;letter-spacing:2px}
+.rv30-count{align-self:center;margin:0;color:#aaa99d;font-size:9px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.rv30-trust{margin:45px 0 55px;padding:clamp(25px,5vw,55px);background:linear-gradient(130deg,#1b1d16,#11120f);border:1px solid rgba(214,255,63,.2);color:#f5f4ec}
+.rv30-trust-head>span,.rv30-social>span{font-size:9px;font-weight:900;letter-spacing:2.4px;color:#d6ff3f}
+.rv30-trust-head h2,.rv30-product-details h2{font:700 clamp(35px,5.5vw,62px)/.95 'Space Grotesk',sans-serif;letter-spacing:-.075em;margin:13px 0}
+.rv30-trust-head h2 em,.rv30-product-details h2 em{font-style:normal;color:#d6ff3f}
+.rv30-trust-head p,.rv30-social p{color:#aaa99d;font-size:12px;line-height:1.7}
+.rv30-trust-grid,.rv30-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:25px}
+.rv30-trust-grid article,.rv30-detail-grid article{padding:22px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.11)}
+.rv30-trust-grid article>b,.rv30-detail-grid article>b{font-size:8px;letter-spacing:1.8px;color:#d6ff3f}
+.rv30-trust-grid h3{font:700 21px 'Space Grotesk';margin:12px 0 8px}
+.rv30-trust-grid p,.rv30-detail-grid p{min-height:65px;color:#aaa99d;font-size:11px;line-height:1.8}
+.rv30-trust-grid a,.rv30-detail-grid a,.rv30-social a{display:inline-block;margin-top:12px;color:#d6ff3f;font-size:9px;font-weight:900;letter-spacing:1px}
+.rv30-social{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:25px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}
+.rv30-social p{margin:0;flex:1}
+.rv30-product-details{margin:40px 0;padding:30px;border:1px solid rgba(214,255,63,.22);background:linear-gradient(130deg,#1b1d16,#11120f);color:#f5f4ec}
+.rv30-product-details>span{font-size:9px;letter-spacing:2px;font-weight:900;color:#d6ff3f}
+.rv30-detail-grid article p{min-height:80px}
+.rv30-art-preview{position:absolute;z-index:3;left:50%;top:40%;transform:translate(-50%,-50%);width:26%;height:25%;object-fit:contain;mix-blend-mode:multiply;pointer-events:none}
+.rv30-art-preview[hidden]{display:none}
+.rv30-preview-note{color:#aaa99d;text-align:center;font-size:10px;line-height:1.7}
+.rv30-checkout-steps{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0 25px;padding:16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.12)}
+.rv30-checkout-steps span{display:flex;align-items:center;gap:8px;color:#77786d;font-size:8px;font-weight:800;letter-spacing:1px}
+.rv30-checkout-steps span.is-active{color:#f5f4ec}
+.rv30-checkout-steps b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#d6ff3f;color:#10110e;font-size:9px}
+.rv30-checkout-steps i{height:1px;min-width:18px;flex:1;background:rgba(255,255,255,.16)}
+@media(max-width:760px){.rv30-trust-grid,.rv30-detail-grid{grid-template-columns:1fr}.rv30-trust-grid p,.rv30-detail-grid p{min-height:0}.rv30-trust{margin:35px 0;padding:22px 16px}.rv30-product-details{padding:22px 16px}.rv30-checkout-steps{gap:8px}.rv30-checkout-steps span{font-size:7px}.rv30-checkout-steps i{min-width:8px}}
+@media(prefers-reduced-motion:reduce){.rv30-art-preview{transition:none}}
