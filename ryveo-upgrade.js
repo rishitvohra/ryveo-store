@@ -44,7 +44,8 @@
     const pct=Math.min(100,Math.round(afterDiscount/1000*100));
     let panel=summary.querySelector(".ryveo-shipping-progress");
     if(!panel){panel=document.createElement("div");panel.className="ryveo-shipping-progress";const title=summary.querySelector(".ryveo-summary-title");if(title)title.insertAdjacentElement("afterend",panel);else summary.prepend(panel);}
-    panel.innerHTML=afterDiscount>=1000?'<p><strong>FREE DELIVERY UNLOCKED.</strong> Your order qualifies for free delivery.</p><div class="ryveo-shipping-track"><span style="width:100%"></span></div>':'<p>You’re <strong>'+money(1000-afterDiscount)+' away</strong> from free delivery.</p><div class="ryveo-shipping-track"><span style="width:'+pct+'%"></span></div>';
+    const markup=afterDiscount>=1000?'<p><strong>FREE DELIVERY UNLOCKED.</strong> Your order qualifies for free delivery.</p><div class="ryveo-shipping-track"><span style="width:100%"></span></div>':'<p>You’re <strong>'+money(1000-afterDiscount)+' away</strong> from free delivery.</p><div class="ryveo-shipping-track"><span style="width:'+pct+'%"></span></div>';
+    if(panel.innerHTML!==markup)panel.innerHTML=markup;
   }
   function watchDynamicSections(){
     const product=document.getElementById("ryveo-product-page");
