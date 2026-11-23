@@ -1,0 +1,104 @@
+/* RYVEO HYBRID EXPERIENCE — editorial polish across every storefront page */
+:root{--ryv-ease:cubic-bezier(.16,1,.3,1)}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-synthesis:none}
+a,button,input,select,textarea{ -webkit-tap-highlight-color:transparent }
+:focus-visible{outline:2px solid var(--accent,#c9f34a)!important;outline-offset:3px}
+.collection-nav a,.nav a,.footer-links a{transition:color .2s ease,opacity .2s ease}
+.ryveo-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px;padding:12px;background:rgba(255,255,255,.035);border:1px solid var(--edge,rgba(255,255,255,.14))}
+.ryveo-tools input,.ryveo-tools select{min-width:145px;min-height:44px;padding:11px 13px;border:1px solid var(--edge,#444);background:var(--select-bg,#151610);color:var(--text,#f5f4ec);font:inherit;font-size:12px;flex:1;border-radius:2px}
+.ryveo-tools input:focus,.ryveo-tools select:focus{outline:0;border-color:var(--accent,#c9f34a);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent,#c9f34a) 15%,transparent)}
+.ryveo-tools input::placeholder{color:var(--soft,#aaa)}
+.ryveo-tools select option{background:var(--select-bg,#151610);color:var(--text,#f5f4ec)}
+.collection-product[hidden],.product[hidden]{display:none!important}
+.collection-product,.product{will-change:transform}
+.collection-product:focus-within,.product:focus-within{border-color:var(--accent,#c9f34a)}
+.ryveo-editorial-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:25px}
+.ryveo-editorial-heading h2{font:800 clamp(32px,5vw,66px)/.94 'Space Grotesk',sans-serif;letter-spacing:-.075em;margin:12px 0 0}
+.ryveo-editorial-heading h2 em{font-style:normal;color:var(--lime,#d6ff3f)}
+.ryveo-text-link{font-size:9px;font-weight:900;letter-spacing:1.4px;border-bottom:1px solid currentColor;padding:0 0 8px;white-space:nowrap}
+.ryveo-lookbook-preview{padding:clamp(58px,8vw,105px) 6%;background:linear-gradient(125deg,#151711,#0d0e0b 68%);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.ryveo-lookbook-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px}
+.ryveo-lookbook-tile{position:relative;display:flex;min-height:390px;overflow:hidden;isolation:isolate;flex-direction:column;justify-content:space-between;padding:22px;color:#fff;background:#1a1b16;border:1px solid rgba(255,255,255,.14);transition:transform .5s var(--ryv-ease),border-color .3s}
+.ryveo-lookbook-tile:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.12) 32%,rgba(0,0,0,.82))}
+.ryveo-lookbook-tile img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ryv-ease);opacity:.86}
+.ryveo-lookbook-tile:hover{transform:translateY(-6px);border-color:var(--tile-accent,#d6ff3f)}
+.ryveo-lookbook-tile:hover img{transform:scale(1.055)}
+.ryveo-lookbook-tile>span{font-size:9px;font-weight:900;letter-spacing:2px}
+.ryveo-lookbook-tile strong{font:900 clamp(35px,4.5vw,64px)/.83 'Space Grotesk';letter-spacing:-.08em;text-shadow:0 5px 25px #0008}
+.ryveo-lookbook-tile>b{font-size:9px;letter-spacing:1.6px}
+.ryveo-lookbook-men{--tile-accent:#c9f34a}.ryveo-lookbook-men strong{color:#d6ff3f}
+.ryveo-lookbook-women{--tile-accent:#ff8bb3}.ryveo-lookbook-women strong{color:#ffd1e1}
+.ryveo-lookbook-custom{--tile-accent:#d8c6ff}.ryveo-lookbook-custom strong{color:#e4d8ff}
+.ryveo-faq{padding:clamp(55px,8vw,95px) 7%;background:#12130f;border-top:1px solid rgba(255,255,255,.08)}
+.ryveo-faq .ryveo-editorial-heading>p{max-width:230px;color:#aaa99d;font-size:12px;line-height:1.7}
+.ryveo-faq-list{max-width:900px;margin-left:auto;border-top:1px solid rgba(255,255,255,.15)}
+.ryveo-faq-list details{border-bottom:1px solid rgba(255,255,255,.15);padding:0}
+.ryveo-faq-list summary{position:relative;list-style:none;cursor:pointer;padding:21px 42px 21px 0;font:700 clamp(15px,2vw,19px) 'Space Grotesk';letter-spacing:-.025em}
+.ryveo-faq-list summary::-webkit-details-marker{display:none}
+.ryveo-faq-list summary:after{content:"+";position:absolute;right:4px;top:15px;color:var(--lime);font:400 27px 'DM Sans';transition:transform .25s}
+.ryveo-faq-list details[open] summary:after{transform:rotate(45deg)}
+.ryveo-faq-list details p{max-width:690px;margin:0;padding:0 36px 22px 0;color:#aaa99d;font-size:13px;line-height:1.8}
+.ryveo-recent-section{padding:55px 6%;background:#10110e}
+.ryveo-recent-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ryveo-recent-card{display:block;padding:9px;border:1px solid rgba(255,255,255,.13);background:#191a16;min-width:0}
+.ryveo-recent-card img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#222}
+.ryveo-recent-card strong{display:block;padding:12px 2px 3px;font:700 13px 'Space Grotesk';text-transform:uppercase}
+.ryveo-recent-card span{display:block;padding:0 2px 8px;color:#d6ff3f;font-size:12px;font-weight:800}
+.ryveo-related{margin-top:54px;padding-top:30px;border-top:1px solid var(--edge,rgba(255,255,255,.15))}
+.ryveo-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ryveo-related-card{display:grid;grid-template-columns:92px minmax(0,1fr);gap:13px;align-items:center;padding:10px;border:1px solid var(--edge,rgba(255,255,255,.15));background:var(--card,#191a16);min-width:0}
+.ryveo-related-card img{width:92px;aspect-ratio:3/4;object-fit:cover;background:#222}
+.ryveo-related-card strong{display:block;font:700 13px 'Space Grotesk';line-height:1.2}
+.ryveo-related-card span{display:block;margin-top:7px;color:var(--accent,#d6ff3f);font-weight:800;font-size:12px}
+.ryveo-related-card small{display:block;margin-top:8px;font-size:8px;letter-spacing:1px;font-weight:900}
+.ryveo-shipping-progress{margin:0 0 20px;padding:16px 17px;background:rgba(201,243,74,.08);border:1px solid rgba(201,243,74,.35)}
+.ryveo-shipping-progress p{margin:0 0 11px;color:var(--text,#f5f4ec);font-size:11px;line-height:1.5}
+.ryveo-shipping-progress p strong{color:var(--accent,#c9f34a)}
+.ryveo-shipping-track{height:6px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:10px}
+.ryveo-shipping-track span{display:block;height:100%;width:0;background:var(--accent,#c9f34a);border-radius:10px;transition:width .5s var(--ryv-ease)}
+body.girls-page .ryveo-tools{background:#fff9fb;border-color:#f1cada}
+body.girls-page .ryveo-tools input,body.girls-page .ryveo-tools select{background:#fff;color:#241823;border-color:#edc5d4}
+body.girls-page .ryveo-tools input::placeholder{color:#927f8c}
+body.girls-page .ryveo-faq{background:#fff0f4;color:#241823}
+body.girls-page .ryveo-faq .ryveo-editorial-heading h2 em{color:#ff4f86}
+body.girls-page .ryveo-faq .ryveo-editorial-heading>p,body.girls-page .ryveo-faq-list details p{color:#756574}
+body.girls-page .ryveo-faq-list{border-color:#e8c8d5}
+body.girls-page .ryveo-faq-list details{border-color:#e8c8d5}
+body.girls-page .ryveo-faq-list summary:after{color:#ff4f86}
+body.girls-page .ryveo-recent-section{background:#fff0f4;color:#241823}
+body.girls-page .ryveo-recent-card{background:#fff9fb;border-color:#f1cada}
+body.girls-page .ryveo-recent-card span{color:#d83b73}
+body.girls-page .ryveo-related-card{background:#fff9fb;border-color:#f1cada;color:#241823}
+body.girls-page .ryveo-related-card span{color:#d83b73}
+body.ryveo-checkout-unified .ryveo-shipping-progress{display:none}
+.ryveo-lookbook-page{background:#0d0e0b;color:#f5f4ec;min-height:100vh}
+.ryveo-lookbook-hero{padding:clamp(55px,8vw,100px) 7%;display:grid;grid-template-columns:1fr .85fr;gap:45px;align-items:center;background:radial-gradient(ellipse at 85% 35%,rgba(214,255,63,.12),transparent 38%),#10110e}
+.ryveo-lookbook-hero h1{font:800 clamp(60px,10vw,128px)/.8 'Space Grotesk';letter-spacing:-.1em;margin:22px 0}
+.ryveo-lookbook-hero h1 em{font-style:normal;color:#d6ff3f;display:block}
+.ryveo-lookbook-hero p{max-width:420px;color:#aaa99d;line-height:1.8;font-size:14px}
+.ryveo-lookbook-hero-art{position:relative;max-width:440px;justify-self:end}
+.ryveo-lookbook-hero-art img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid rgba(214,255,63,.3);box-shadow:18px 18px 0 rgba(214,255,63,.1)}
+.ryveo-lookbook-story{padding:65px 6% 90px}
+.ryveo-lookbook-story .ryveo-lookbook-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ryveo-lookbook-story .ryveo-lookbook-tile{min-height:520px}
+.ryveo-lookbook-note{margin-top:35px;padding:30px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(110deg,#191a16,#12130f);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ryveo-lookbook-note h2{font:800 clamp(27px,4vw,46px)/.95 'Space Grotesk';letter-spacing:-.06em;margin:0}
+.ryveo-lookbook-note p{max-width:390px;color:#aaa99d;font-size:12px;line-height:1.8}
+.ryveo-lookbook-note a{padding:14px 18px;background:#d6ff3f;color:#10110e;font-size:9px;font-weight:900;letter-spacing:1px;white-space:nowrap}
+@media(max-width:850px){.ryveo-lookbook-grid{grid-template-columns:1fr 1fr}.ryveo-lookbook-custom{grid-column:1/-1;min-height:300px}.ryveo-lookbook-story .ryveo-lookbook-grid{grid-template-columns:1fr 1fr}.ryveo-lookbook-story .ryveo-lookbook-custom{grid-column:1/-1}.ryveo-lookbook-story .ryveo-lookbook-tile{min-height:420px}.ryveo-recent-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ryveo-related-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.ryveo-editorial-heading{align-items:flex-start;flex-direction:column;gap:13px}.ryveo-editorial-heading h2{font-size:clamp(34px,10vw,52px)}.ryveo-lookbook-preview{padding:55px 4%}.ryveo-lookbook-grid,.ryveo-lookbook-story .ryveo-lookbook-grid{grid-template-columns:1fr 1fr;gap:9px}.ryveo-lookbook-tile{min-height:300px;padding:14px}.ryveo-lookbook-tile strong{font-size:clamp(29px,8vw,43px)}.ryveo-lookbook-tile>span{font-size:7px;letter-spacing:1px}.ryveo-lookbook-custom,.ryveo-lookbook-story .ryveo-lookbook-custom{grid-column:1/-1;min-height:260px}.ryveo-faq{padding:55px 5%}.ryveo-faq .ryveo-editorial-heading>p{margin:0}.ryveo-faq-list summary{padding:18px 35px 18px 0;font-size:15px}.ryveo-faq-list details p{font-size:12px}.ryveo-recent-section{padding:45px 4%}.ryveo-recent-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ryveo-recent-card{padding:7px}.ryveo-related-card{grid-template-columns:78px minmax(0,1fr)}.ryveo-related-card img{width:78px}.ryveo-lookbook-hero{grid-template-columns:1fr;gap:30px;padding:55px 6%}.ryveo-lookbook-hero h1{font-size:clamp(65px,17vw,95px)}.ryveo-lookbook-hero-art{width:82%;justify-self:center;margin-left:10px}.ryveo-lookbook-story{padding:48px 4% 65px}.ryveo-lookbook-story .ryveo-lookbook-tile{min-height:310px}.ryveo-lookbook-note{padding:22px;align-items:flex-start;flex-direction:column}.ryveo-lookbook-note a{width:100%;text-align:center}.ryveo-tools{padding:9px;gap:8px}.ryveo-tools input,.ryveo-tools select{min-width:calc(50% - 4px);font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ryveo-lookbook-tile,.ryveo-lookbook-tile img,.ryveo-shipping-track span{transition:none!important}}
+
+/* Product detail inherits the matching Men or Women collection identity */
+body.girls-page.ryveo-page{background:radial-gradient(ellipse at 88% 8%,rgba(255,79,134,.15),transparent 36%),radial-gradient(ellipse at 8% 80%,rgba(198,177,255,.2),transparent 34%),#fff0f4;color:#241823}
+body.girls-page.ryveo-page .ryveo-product-photo{background:#f7dce7;border-color:#f1cada}
+body.girls-page.ryveo-page .ryveo-product-copy h1{font-family:'Outfit',sans-serif;letter-spacing:-.07em}
+body.girls-page.ryveo-page .ryveo-price{color:#d83b73}
+body.girls-page.ryveo-page .ryveo-field label{color:#756574}
+body.girls-page.ryveo-page .ryveo-field select,body.girls-page.ryveo-page .ryveo-field input,body.girls-page.ryveo-page .ryveo-field textarea{background:#fff;border-color:#edc5d4;color:#241823}
+body.girls-page.ryveo-page .ryveo-btn{background:#ff4f86;border-color:#ff4f86;color:#fff}
+body.girls-page.ryveo-page .ryveo-btn.secondary{background:transparent;color:#241823;border-color:#d9a9bc}
+body.girls-page.ryveo-page .ryveo-info-grid div{border-color:#edc5d4;color:#756574}
+body.girls-page.ryveo-page .ryveo-info-grid b{color:#241823}
+body.girls-page.ryveo-page .ryveo-table th,body.girls-page.ryveo-page .ryveo-table td{border-color:#edc5d4}
