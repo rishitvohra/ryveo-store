@@ -277,3 +277,17 @@ body.girls-page .rv-custom-preview-panel>p{color:#756574}
 @media(max-width:900px){.rv-drop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rv-drop-card.rv-drop-feature{grid-row:span 1}.hero{min-height:650px}.hero h1.graffiti-wordmark{font-size:clamp(82px,12vw,140px)}}
 @media(max-width:700px){.hero{min-height:0;padding:65px 6% 50px}.hero h1.graffiti-wordmark{font-size:clamp(78px,21vw,128px)}.hero-visual{width:82%;max-width:360px;margin:38px auto 10px}.hero-photo{aspect-ratio:4/4.6}.rv-drop-zone{padding:58px 4%}.rv-drop-heading{align-items:flex-start;flex-direction:column;margin-bottom:22px}.rv-drop-heading h2{font-size:clamp(48px,13vw,72px)}.rv-drop-all{width:100%;justify-content:space-between}.rv-drop-grid{gap:9px}.rv-drop-card{padding:6px;border-radius:7px}.rv-drop-meta{align-items:flex-start;flex-direction:column;padding:11px 3px 4px}.rv-drop-meta strong{font-size:12px}.rv-drop-meta>b{font-size:11px}.rv-drop-tag{top:8px;left:8px;font-size:7px;padding:6px 7px}}
 @media(prefers-reduced-motion:reduce){.rv-drop-card,.rv-drop-image img,.rv-drop-all{transition:none}.hero-photo img{animation:none}}
+
+
+/* FIX — high-contrast announcement strip directly below the navigation */
+body>.announcement{
+  position:relative!important;z-index:31!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:10px clamp(10px,2vw,24px)!important;
+  min-height:42px!important;width:100%!important;margin:0!important;padding:11px 16px!important;
+  background:#d6ff3f!important;color:#10110e!important;border:0!important;border-bottom:1px solid rgba(16,17,14,.18)!important;
+  box-shadow:0 3px 22px rgba(214,255,63,.22)!important;text-align:center!important;
+  font:900 10px/1.35 'DM Sans',sans-serif!important;letter-spacing:2px!important;text-transform:uppercase!important;
+  opacity:1!important;visibility:visible!important;
+}
+body>.announcement .announcement-message{display:inline-block!important;color:#10110e!important;font-weight:900!important;opacity:1!important;visibility:visible!important}
+body>.announcement .announcement-divider{display:inline-block!important;color:#10110e!important;font-size:13px!important;line-height:1!important;opacity:.75!important}
+@media(max-width:600px){body>.announcement{min-height:38px!important;gap:6px 9px!important;padding:9px 10px!important;font-size:8px!important;letter-spacing:1.15px!important}}
